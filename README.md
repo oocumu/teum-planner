@@ -292,14 +292,14 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 #### 7.3.1 이번 주 지표
 
-> 자동 생성: 2026-11-15 21:09 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43712323449)
+> 자동 생성: 2026-11-15 21:09 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43712388884)
 
 | 지표 | 이번 주 (진행 중) | 지난 주 | 최근 8주 | 등급 (최근 8주) |
 |---|---:|---:|---:|:---:|
-| 배포 빈도 | 0회 | 0회 | 주 0.0회 | 🔴 Low |
-| 변경 리드 타임 | — | — | — | — |
+| 배포 빈도 | 1회 | 0회 | 주 0.13회 | 🔴 Low |
+| 변경 리드 타임 | 1분 | — | 1분 | 🟢 Elite |
 | 평균 복구 시간 (MTTR) | — | — | — | — |
-| 변경 실패율 | — | — | — | — |
+| 변경 실패율 | 0.0% | — | 0.0% | 🟢 Elite |
 
 ![DORA 지표 추이](docs/dora/dora-chart.png)
 
@@ -307,7 +307,7 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 | 주 (월요일) | 배포 | 실패 | 리드 타임 | MTTR | 실패율 |
 |---|---:|---:|---:|---:|---:|
-| 2026-11-09 (진행 중) | 0 | 0 | — | — | — |
+| 2026-11-09 (진행 중) | 1 | 0 | 1분 | — | 0.0% |
 | 2026-11-02 | 0 | 0 | — | — | — |
 | 2026-10-26 | 0 | 0 | — | — | — |
 | 2026-10-19 | 0 | 0 | — | — | — |
@@ -326,20 +326,21 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 #### 7.3.3 워크플로우 실행 결과
 
-`ci.yml` 최근 실행 0건 (이 기록으로 지표를 계산합니다)
+`ci.yml` 최근 실행 1건 (이 기록으로 지표를 계산합니다)
 
 | 실행 | 결과 | 완료 시각 (KST) | 커밋 | 트리거 |
 |---|:---:|---|---|---|
-| — | — | — | — | — |
+| [#3](https://github.com/oocumu/teum-planner/actions/runs/43712297451) | ✅ 성공 | 11/15 21:09 | `d0c8ee5` ci: Lint→Build→Test(Matrix)→Deploy 파이프라인 | push |
 
 #### 7.3.4 JSON 아티팩트
 
 매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).
 
-- 이번 실행: **`dora-metrics-9`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43712323449)
+- 이번 실행: **`dora-metrics-10`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43712388884)
 
 | 아티팩트 | 크기 | 생성 시각 (KST) |
 |---|---:|---|
+| [`dora-metrics-9`](https://github.com/oocumu/teum-planner/actions/runs/43712323449) | 134.7 KB | 11/15 21:09 |
 | [`dora-metrics-8`](https://github.com/oocumu/teum-planner/actions/runs/43712210047) | 144.1 KB | 11/15 21:07 |
 | [`dora-metrics-6`](https://github.com/oocumu/teum-planner/actions/runs/43712135958) | 144.3 KB | 11/15 21:07 |
 | [`dora-metrics-5`](https://github.com/oocumu/teum-planner/actions/runs/43706659607) | 145.4 KB | 11/15 19:59 |
@@ -354,23 +355,23 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 ```json
 {
-  "generated_at": "2026-11-15T12:09:08.463954+00:00",
+  "generated_at": "2026-11-15T12:09:54.291253+00:00",
   "repository": "oocumu/teum-planner",
   "summary": {
-    "deployments": 0,
-    "deploy_attempts": 0,
+    "deployments": 1,
+    "deploy_attempts": 1,
     "failed_deployments": 0,
-    "deployments_per_week": 0.0,
-    "lead_time_hours": null,
-    "lead_time_samples": 0,
+    "deployments_per_week": 0.13,
+    "lead_time_hours": 0.02,
+    "lead_time_samples": 1,
     "mttr_hours": null,
     "recovery_samples": 0,
-    "change_failure_rate": null,
+    "change_failure_rate": 0.0,
     "grades": {
       "deployments_per_week": "🔴 Low",
-      "lead_time_hours": "—",
+      "lead_time_hours": "🟢 Elite",
       "mttr_hours": "—",
-      "change_failure_rate": "—"
+      "change_failure_rate": "🟢 Elite"
     }
   }
 }

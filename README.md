@@ -418,6 +418,8 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 현재 단계는 파싱·스케줄링 알고리즘을 검증하는 프로토타입입니다. ([ADR-0003](docs/adr/0003-prototype-with-plain-node.md))
 
+- CI 최적화 리포트: [docs/ci-optimization-report.md](docs/ci-optimization-report.md)
+
 - 데모: https://oocumu.github.io/teum-planner/
 
 ```bash

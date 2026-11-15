@@ -9,7 +9,8 @@
 
 <br/>
 
-![status](https://img.shields.io/badge/status-기획-lightgrey?style=flat-square)
+[![CI](https://github.com/oocumu/teum-planner/actions/workflows/ci.yml/badge.svg)](https://github.com/oocumu/teum-planner/actions/workflows/ci.yml)
+![status](https://img.shields.io/badge/status-프로토타입-F2A33A?style=flat-square)
 ![period](https://img.shields.io/badge/기간-16주-5B8DEF?style=flat-square)
 ![type](https://img.shields.io/badge/개인-프로젝트-5B8DEF?style=flat-square)
 ![license](https://img.shields.io/badge/license-MIT-2EA44F?style=flat-square)
@@ -40,6 +41,9 @@
     - [6.2 주차별 상세 계획](#62-주차별-상세-계획)
 7. [개발 지표 (DORA)](#7-개발-지표-dora)
 8. [협업 규칙](#8-협업-규칙)
+9. [시작하기](#9-시작하기)
+10. [문서](#10-문서)
+11. [라이선스](#11-라이선스)
 
 <br/>
 
@@ -232,7 +236,7 @@
 
 GitHub Actions로 DORA 4대 지표(배포 빈도, 변경 리드 타임, 평균 복구 시간, 변경 실패율)를 자동 수집하고, Chart.js 대시보드와 아래 주간 리포트로 보여 준다.
 
-- 대시보드: https://oocumu.github.io/teum-planner/
+- 대시보드: https://oocumu.github.io/teum-planner/dashboard/
 - 워크플로우: [`dora-metrics.yml`](.github/workflows/dora-metrics.yml) (지표 수집) · [`deploy.yml`](.github/workflows/deploy.yml) (배포)
 - 수집 스크립트: [`scripts/collect_dora.py`](scripts/collect_dora.py)
 
@@ -405,6 +409,47 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 | PR | 템플릿 작성, 리뷰 반영 후 Squash and merge | [CONTRIBUTING](CONTRIBUTING.md#3-pull-request) |
 | 리뷰 | `[MUST]` `[SHOULD]` `[COULD]` `[QUESTION]` `[PRAISE]` 태그 사용 | [REVIEW_GUIDE](docs/REVIEW_GUIDE.md) |
 | 이슈 | Bug / Feature 템플릿으로 등록 | [ISSUE_TEMPLATE](.github/ISSUE_TEMPLATE) |
+
+<br/>
+
+## 9. 시작하기
+
+현재 단계는 파싱·스케줄링 알고리즘을 검증하는 프로토타입입니다. ([ADR-0003](docs/adr/0003-prototype-with-plain-node.md))
+
+- 데모: https://oocumu.github.io/teum-planner/
+
+```bash
+git clone https://github.com/oocumu/teum-planner.git
+cd teum-planner
+npm install
+npm start          # http://localhost:3000
+```
+
+| 명령 | 설명 |
+| --- | --- |
+| `npm run lint` | ESLint 검사 |
+| `npm test` | 테스트 (`node:test`) |
+| `npm run build` | `dist/`에 정적 사이트 빌드 |
+
+`.env.example`을 `.env`로 복사해 `GEMINI_API_KEY`를 넣으면 AI 분석을 사용하고, 비워 두면 규칙 기반 파서로 동작합니다. 자세한 내용은 [Wiki › Getting Started](https://github.com/oocumu/teum-planner/wiki/Getting-Started)를 참고하세요.
+
+<br/>
+
+## 10. 문서
+
+| 문서 | 내용 |
+| --- | --- |
+| [Wiki](https://github.com/oocumu/teum-planner/wiki) | 설치, 개발 가이드, 문제 해결 |
+| [CONTRIBUTING](CONTRIBUTING.md) | 브랜치·커밋·PR 규칙 |
+| [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) | 행동 강령 |
+| [docs/adr](docs/adr) | 기술 결정 기록 |
+| [Discussions](https://github.com/oocumu/teum-planner/discussions) | 질문, 아이디어, RFC |
+
+<br/>
+
+## 11. 라이선스
+
+[MIT License](LICENSE) © 2026 oocumu
 
 <br/>
 

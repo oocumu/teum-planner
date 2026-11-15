@@ -1,6 +1,6 @@
 # 기여 가이드 (CONTRIBUTING)
 
-틈 플래너에 기여해 주셔서 감사합니다! 아래 규칙을 따라 주세요.
+틈 플래너에 기여해 주셔서 감사합니다. 참여하는 모든 분은 [행동 강령](CODE_OF_CONDUCT.md)을 지켜 주세요.
 
 ## 1. 브랜치 전략 (Feature Branch)
 
@@ -79,3 +79,28 @@ PR은 작게 유지합니다. (변경 300줄 이하 권장)
 - CODEOWNERS 리뷰 필수
 - 모든 대화(Conversation) 해결 후 병합
 - force push / 삭제 금지
+
+## 6. 개발 환경
+
+Node.js 20.12 이상이 필요합니다. PR을 올리기 전에 아래 명령이 통과하는지 확인합니다.
+
+```bash
+npm install
+npm run lint
+npm test
+```
+
+설치 과정은 [Wiki › Getting Started](https://github.com/oocumu/teum-planner/wiki/Getting-Started), 오류 해결은 [Wiki › Troubleshooting](https://github.com/oocumu/teum-planner/wiki/Troubleshooting)을 참고하세요.
+
+## 7. 소통 채널
+
+| 목적 | 채널 |
+| --- | --- |
+| 버그, 작업 요청 | [Issues](https://github.com/oocumu/teum-planner/issues) |
+| 질문, 아이디어 | [Discussions](https://github.com/oocumu/teum-planner/discussions) |
+| 설계 변경 제안 | Discussions › RFC → 결론은 [docs/adr](docs/adr)에 기록 |
+| 보안 문제 | 공개 Issue 대신 [비공개 보고](https://github.com/oocumu/teum-planner/security/advisories/new) |
+
+## 8. 라이선스
+
+기여한 코드는 [MIT License](LICENSE)로 배포됩니다.

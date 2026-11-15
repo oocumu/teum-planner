@@ -10,6 +10,7 @@
 /docs/                  @oocumu
 CONTRIBUTING.md         @oocumu
 
+# 예시: 팀원 합류 시 아래 주석 해제
 # 프론트엔드 / 백엔드 (팀원이 생기면 여기에 추가)
 # /frontend/            @oocumu @teammate1
 # /backend/             @oocumu @teammate2

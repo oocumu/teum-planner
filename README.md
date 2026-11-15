@@ -377,10 +377,10 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 
 ### 7.4 결과 분석
 
-- **배포 빈도**: 저장소를 teum-planner로 옮긴 뒤 배포가 2번(성공 1, 실패 1)뿐이라 최근 8주 평균 주 0.13회로 Low 등급이다. 아직 기능 개발 전이라 배포할 일이 많지 않았다.
-- **변경 리드 타임**: 1분(Elite). PR을 병합하면 바로 main에 반영되고 배포까지 이어져서 짧게 나왔다.
+- **배포 빈도**: 주 0.5회(Medium). PR을 병합할 때마다 main에 push가 일어나 배포가 1번씩 실행되는 구조다. 지금까지 PR 4건을 병합해 성공한 배포가 4번이고, 아직 기능 개발 전이라 횟수가 적다.
+- **변경 리드 타임**: 1분(Elite). Squash merge로 만들어진 커밋이 바로 main에 올라가고 배포까지 이어지기 때문에 짧게 측정된다. 브랜치에서 작업한 시간은 포함되지 않는다(7.5 참고).
 - **MTTR**: 19분(Elite). 첫 배포가 실패하고 다음 배포가 성공할 때까지 걸린 시간이다.
-- **변경 실패율**: 2번 중 1번 실패로 50%(Low). 첫 배포(Deploy #1)는 저장소에 GitHub Pages가 아직 켜져 있지 않아 `configure-pages` 단계에서 `Get Pages site failed` 오류로 실패했다. Settings에서 Pages 소스를 GitHub Actions로 바꾼 뒤 다음 배포는 정상적으로 성공했다.
+- **변경 실패율**: 5번 중 1번 실패로 20%(High). 첫 배포(Deploy #1)는 저장소에 GitHub Pages가 아직 켜져 있지 않아 `configure-pages` 단계에서 `Get Pages site failed` 오류로 실패했다. Settings에서 Pages 소스를 GitHub Actions로 바꾼 뒤 이후 배포는 모두 성공했다.
 
 ### 7.5 개선 방향 및 한계
 

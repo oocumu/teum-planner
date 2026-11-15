@@ -1,0 +1,38 @@
+name: "✨ Feature Request"
+description: 새 기능을 제안합니다
+title: "[Feature] "
+labels: ["type: feature"]
+body:
+  - type: textarea
+    id: why
+    attributes:
+      label: 배경 (왜 필요한가요?)
+      placeholder: "사용자가 ... 할 때 ... 가 불편하다"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 기능 설명
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 완료 조건 (Definition of Done)
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 영역
+      options: [frontend, backend, ai, db, infra]
+  - type: dropdown
+    id: points
+    attributes:
+      label: 예상 스토리 포인트
+      description: 1=몇 시간, 2=반나절, 3=하루, 5=2~3일, 8=쪼개야 함
+      options: ["1", "2", "3", "5", "8"]

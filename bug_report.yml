@@ -1,0 +1,42 @@
+name: "🐛 Bug Report"
+description: 버그를 제보합니다
+title: "[Bug] "
+labels: ["type: bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 버그 설명
+      description: 어떤 문제가 발생했나요?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 방법
+      placeholder: |
+        1. '...' 화면으로 이동
+        2. '...' 입력
+        3. 오류 발생
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 동작
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 동작 / 스크린샷
+  - type: dropdown
+    id: area
+    attributes:
+      label: 영역
+      options: [frontend, backend, ai, db, infra]
+  - type: input
+    id: env
+    attributes:
+      label: 환경
+      placeholder: "예: Chrome 130 / Windows 11"

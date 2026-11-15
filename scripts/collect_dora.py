@@ -427,13 +427,13 @@ def render_readme_section(latest: dict, history: list[dict], chart_rel: str | No
                    f"{fmt_pct(w['change_failure_rate'])} |")
     out += ["", "</details>", ""]
 
-    # 3-2. 대시보드 화면 (워크플로우가 Playwright 로 캡처)
+    # 7.3.2 대시보드 화면 (워크플로우가 Playwright 로 캡처)
     out += ["#### 7.3.2 대시보드 화면", ""]
     if latest.get("dashboard_url"):
         out += [f"실제 페이지: {latest['dashboard_url']}", ""]
     out += ["![대시보드 화면](docs/dora/dashboard.png)", ""]
 
-    # 3-3. 워크플로우 실행 결과
+    # 7.3.3 워크플로우 실행 결과
     deploys = latest.get("recent_deploys", [])
     out += ["#### 7.3.3 워크플로우 실행 결과", "",
             f"`{latest['config']['deploy_workflow']}` 최근 실행 {len(deploys)}건 "
@@ -449,7 +449,7 @@ def render_readme_section(latest: dict, history: list[dict], chart_rel: str | No
         out.append("| — | — | — | — | — |")
     out.append("")
 
-    # 3-4. JSON 아티팩트
+    # 7.3.4 JSON 아티팩트
     arts = latest.get("artifacts", [])
     out += ["#### 7.3.4 JSON 아티팩트", "",
             "매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).", ""]

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-15T10:59:27.073586+00:00",
+  "generated_at": "2026-11-15T12:06:52.552449+00:00",
   "repository": "oocumu/teum-planner",
   "demo": false,
-  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43706659607",
+  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43712135958",
   "config": {
     "repo": "oocumu/teum-planner",
     "deploy_workflow": "deploy.yml",
@@ -11,15 +11,15 @@
     "history_weeks": 8
   },
   "current_week": {
-    "deployments": 4,
-    "deploy_attempts": 5,
+    "deployments": 6,
+    "deploy_attempts": 7,
     "failed_deployments": 1,
-    "deployments_per_week": 4.0,
+    "deployments_per_week": 6.0,
     "lead_time_hours": 0.01,
-    "lead_time_samples": 7,
+    "lead_time_samples": 10,
     "mttr_hours": 0.31,
     "recovery_samples": 1,
-    "change_failure_rate": 20.0,
+    "change_failure_rate": 14.3,
     "week": "2026-W46",
     "start": "2026-11-09",
     "end": "2026-11-15",
@@ -41,20 +41,20 @@
     "partial": false
   },
   "summary": {
-    "deployments": 4,
-    "deploy_attempts": 5,
+    "deployments": 6,
+    "deploy_attempts": 7,
     "failed_deployments": 1,
-    "deployments_per_week": 0.5,
+    "deployments_per_week": 0.75,
     "lead_time_hours": 0.01,
-    "lead_time_samples": 7,
+    "lead_time_samples": 10,
     "mttr_hours": 0.31,
     "recovery_samples": 1,
-    "change_failure_rate": 20.0,
+    "change_failure_rate": 14.3,
     "grades": {
       "deployments_per_week": "🟡 Medium",
       "lead_time_hours": "🟢 Elite",
       "mttr_hours": "🟢 Elite",
-      "change_failure_rate": "🔵 High"
+      "change_failure_rate": "🟢 Elite"
     }
   },
   "open_failure_since": null,
@@ -64,9 +64,27 @@
     "mttr": "배포 실패 → 다음 성공 배포까지 걸린 시간 + incident 이슈 생성→종료 시간 (평균)",
     "change_failure_rate": "실패한 배포 실행 수 ÷ 전체 배포 시도 수 (cancelled/skipped 제외)"
   },
-  "run_number": "5",
+  "run_number": "6",
   "dashboard_url": "https://oocumu.github.io/teum-planner/",
   "recent_deploys": [
+    {
+      "number": 7,
+      "conclusion": "success",
+      "sha": "a8b865d969a54872163818a31d3b348080db31a3",
+      "title": "docs: ADR 구조와 비동기 협업 워크플로우 (#6)",
+      "event": "push",
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43712140311",
+      "finished": "2026-11-15T12:06:37+00:00"
+    },
+    {
+      "number": 6,
+      "conclusion": "success",
+      "sha": "187ce5427e4680b9ec1162e35e6d5982ee67f9c3",
+      "title": "feat: 문장 파서와 자동 배치 알고리즘 프로토타입 (#5)",
+      "event": "push",
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43712102663",
+      "finished": "2026-11-15T12:06:12+00:00"
+    },
     {
       "number": 5,
       "conclusion": "success",
@@ -114,6 +132,13 @@
     }
   ],
   "artifacts": [
+    {
+      "name": "dora-metrics-5",
+      "size": 148892,
+      "created": "2026-11-15T10:59:34+00:00",
+      "expired": false,
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43706659607"
+    },
     {
       "name": "dora-metrics-4",
       "size": 148835,

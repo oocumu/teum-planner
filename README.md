@@ -39,6 +39,7 @@
     - [6.1 단계별 일정](#61-단계별-일정)
     - [6.2 주차별 상세 계획](#62-주차별-상세-계획)
 7. [개발 지표 (DORA)](#7-개발-지표-dora)
+8. [협업 규칙](#8-협업-규칙)
 
 <br/>
 
@@ -390,6 +391,16 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 <br/>
 
 ---
+
+| 항목 | 규칙 | 문서 |
+| --- | --- | --- |
+| 브랜치 | `main` 직접 push 금지, `feat/` `fix/` `docs/` `chore/` 등 기능 브랜치에서 작업 | [CONTRIBUTING](CONTRIBUTING.md#1-브랜치-전략-feature-branch) |
+| 커밋 | Conventional Commits (`type(scope): subject`) | [CONTRIBUTING](CONTRIBUTING.md#2-커밋-메시지-conventional-commits) |
+| PR | 템플릿 작성, 리뷰 반영 후 Squash and merge | [CONTRIBUTING](CONTRIBUTING.md#3-pull-request) |
+| 리뷰 | `[MUST]` `[SHOULD]` `[COULD]` `[QUESTION]` `[PRAISE]` 태그 사용 | [REVIEW_GUIDE](docs/REVIEW_GUIDE.md) |
+| 이슈 | Bug / Feature 템플릿으로 등록 | [ISSUE_TEMPLATE](.github/ISSUE_TEMPLATE) |
+
+<br/>
 
 <div align="center">
 <sub>※ 전반적인 프로젝트 볼륨과 마일스톤 초안의 구현에 관해서는 AI의 도움을 받았습니다.</sub>

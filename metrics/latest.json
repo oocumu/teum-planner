@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-15T10:53:45.432942+00:00",
+  "generated_at": "2026-11-15T10:59:27.073586+00:00",
   "repository": "oocumu/teum-planner",
   "demo": false,
-  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43706200268",
+  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43706659607",
   "config": {
     "repo": "oocumu/teum-planner",
     "deploy_workflow": "deploy.yml",
@@ -11,15 +11,15 @@
     "history_weeks": 8
   },
   "current_week": {
-    "deployments": 3,
-    "deploy_attempts": 4,
+    "deployments": 4,
+    "deploy_attempts": 5,
     "failed_deployments": 1,
-    "deployments_per_week": 3.0,
+    "deployments_per_week": 4.0,
     "lead_time_hours": 0.01,
-    "lead_time_samples": 5,
+    "lead_time_samples": 7,
     "mttr_hours": 0.31,
     "recovery_samples": 1,
-    "change_failure_rate": 25.0,
+    "change_failure_rate": 20.0,
     "week": "2026-W46",
     "start": "2026-11-09",
     "end": "2026-11-15",
@@ -41,15 +41,15 @@
     "partial": false
   },
   "summary": {
-    "deployments": 3,
-    "deploy_attempts": 4,
+    "deployments": 4,
+    "deploy_attempts": 5,
     "failed_deployments": 1,
-    "deployments_per_week": 0.38,
+    "deployments_per_week": 0.5,
     "lead_time_hours": 0.01,
-    "lead_time_samples": 5,
+    "lead_time_samples": 7,
     "mttr_hours": 0.31,
     "recovery_samples": 1,
-    "change_failure_rate": 25.0,
+    "change_failure_rate": 20.0,
     "grades": {
       "deployments_per_week": "🟡 Medium",
       "lead_time_hours": "🟢 Elite",
@@ -64,9 +64,18 @@
     "mttr": "배포 실패 → 다음 성공 배포까지 걸린 시간 + incident 이슈 생성→종료 시간 (평균)",
     "change_failure_rate": "실패한 배포 실행 수 ÷ 전체 배포 시도 수 (cancelled/skipped 제외)"
   },
-  "run_number": "4",
+  "run_number": "5",
   "dashboard_url": "https://oocumu.github.io/teum-planner/",
   "recent_deploys": [
+    {
+      "number": 5,
+      "conclusion": "success",
+      "sha": "c83db44df0d8e88516ba64bfeb21ddae4d4bee6d",
+      "title": "docs(readme): DORA 결과 분석을 최신 지표로 갱신 (#4)",
+      "event": "push",
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43706631277",
+      "finished": "2026-11-15T10:58:51+00:00"
+    },
     {
       "number": 4,
       "conclusion": "success",
@@ -105,6 +114,13 @@
     }
   ],
   "artifacts": [
+    {
+      "name": "dora-metrics-4",
+      "size": 148835,
+      "created": "2026-11-15T10:53:56+00:00",
+      "expired": false,
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43706200268"
+    },
     {
       "name": "dora-metrics-3",
       "size": 147663,

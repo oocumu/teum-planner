@@ -1,6 +1,6 @@
 {
   "repository": "oocumu/teum-planner",
-  "updated_at": "2026-11-15T10:53:45.432942+00:00",
+  "updated_at": "2026-11-15T10:59:27.073586+00:00",
   "weeks": [
     {
       "deployments": 0,
@@ -168,15 +168,15 @@
       "partial": false
     },
     {
-      "deployments": 3,
-      "deploy_attempts": 4,
+      "deployments": 4,
+      "deploy_attempts": 5,
       "failed_deployments": 1,
-      "deployments_per_week": 3.0,
+      "deployments_per_week": 4.0,
       "lead_time_hours": 0.01,
-      "lead_time_samples": 5,
+      "lead_time_samples": 7,
       "mttr_hours": 0.31,
       "recovery_samples": 1,
-      "change_failure_rate": 25.0,
+      "change_failure_rate": 20.0,
       "week": "2026-W46",
       "start": "2026-11-09",
       "end": "2026-11-15",

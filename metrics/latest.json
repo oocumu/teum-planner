@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-15T07:54:20.139318+00:00",
+  "generated_at": "2026-11-15T10:53:45.432942+00:00",
   "repository": "oocumu/teum-planner",
   "demo": false,
-  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43691964142",
+  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43706200268",
   "config": {
     "repo": "oocumu/teum-planner",
     "deploy_workflow": "deploy.yml",
@@ -11,15 +11,15 @@
     "history_weeks": 8
   },
   "current_week": {
-    "deployments": 2,
-    "deploy_attempts": 3,
+    "deployments": 3,
+    "deploy_attempts": 4,
     "failed_deployments": 1,
-    "deployments_per_week": 2.0,
+    "deployments_per_week": 3.0,
     "lead_time_hours": 0.01,
-    "lead_time_samples": 3,
+    "lead_time_samples": 5,
     "mttr_hours": 0.31,
     "recovery_samples": 1,
-    "change_failure_rate": 33.3,
+    "change_failure_rate": 25.0,
     "week": "2026-W46",
     "start": "2026-11-09",
     "end": "2026-11-15",
@@ -41,20 +41,20 @@
     "partial": false
   },
   "summary": {
-    "deployments": 2,
-    "deploy_attempts": 3,
+    "deployments": 3,
+    "deploy_attempts": 4,
     "failed_deployments": 1,
-    "deployments_per_week": 0.25,
+    "deployments_per_week": 0.38,
     "lead_time_hours": 0.01,
-    "lead_time_samples": 3,
+    "lead_time_samples": 5,
     "mttr_hours": 0.31,
     "recovery_samples": 1,
-    "change_failure_rate": 33.3,
+    "change_failure_rate": 25.0,
     "grades": {
       "deployments_per_week": "🟡 Medium",
       "lead_time_hours": "🟢 Elite",
       "mttr_hours": "🟢 Elite",
-      "change_failure_rate": "🟡 Medium"
+      "change_failure_rate": "🔵 High"
     }
   },
   "open_failure_since": null,
@@ -64,9 +64,18 @@
     "mttr": "배포 실패 → 다음 성공 배포까지 걸린 시간 + incident 이슈 생성→종료 시간 (평균)",
     "change_failure_rate": "실패한 배포 실행 수 ÷ 전체 배포 시도 수 (cancelled/skipped 제외)"
   },
-  "run_number": "3",
+  "run_number": "4",
   "dashboard_url": "https://oocumu.github.io/teum-planner/",
   "recent_deploys": [
+    {
+      "number": 4,
+      "conclusion": "success",
+      "sha": "6d3cf6e14803f4907ef9438c1f41201a11b06edb",
+      "title": "docs: CONTRIBUTING 및 코드 리뷰 가이드 작성 (#3)",
+      "event": "push",
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43706173998",
+      "finished": "2026-11-15T10:52:50+00:00"
+    },
     {
       "number": 3,
       "conclusion": "success",
@@ -96,6 +105,13 @@
     }
   ],
   "artifacts": [
+    {
+      "name": "dora-metrics-3",
+      "size": 147663,
+      "created": "2026-11-15T07:54:30+00:00",
+      "expired": false,
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43691964142"
+    },
     {
       "name": "dora-metrics-2",
       "size": 149587,

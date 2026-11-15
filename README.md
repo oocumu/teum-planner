@@ -288,14 +288,14 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 
 #### 7.3.1 이번 주 지표
 
-> 자동 생성: 2026-11-15 16:54 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43691964142)
+> 자동 생성: 2026-11-15 19:53 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43706200268)
 
 | 지표 | 이번 주 (진행 중) | 지난 주 | 최근 8주 | 등급 (최근 8주) |
 |---|---:|---:|---:|:---:|
-| 배포 빈도 | 2회 | 0회 | 주 0.25회 | 🟡 Medium |
+| 배포 빈도 | 3회 | 0회 | 주 0.38회 | 🟡 Medium |
 | 변경 리드 타임 | 1분 | — | 1분 | 🟢 Elite |
 | 평균 복구 시간 (MTTR) | 19분 | — | 19분 | 🟢 Elite |
-| 변경 실패율 | 33.3% | — | 33.3% | 🟡 Medium |
+| 변경 실패율 | 25.0% | — | 25.0% | 🔵 High |
 
 ![DORA 지표 추이](docs/dora/dora-chart.png)
 
@@ -303,7 +303,7 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 
 | 주 (월요일) | 배포 | 실패 | 리드 타임 | MTTR | 실패율 |
 |---|---:|---:|---:|---:|---:|
-| 2026-11-09 (진행 중) | 2 | 1 | 1분 | 19분 | 33.3% |
+| 2026-11-09 (진행 중) | 3 | 1 | 1분 | 19분 | 25.0% |
 | 2026-11-02 | 0 | 0 | — | — | — |
 | 2026-10-26 | 0 | 0 | — | — | — |
 | 2026-10-19 | 0 | 0 | — | — | — |
@@ -322,10 +322,11 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 
 #### 7.3.3 워크플로우 실행 결과
 
-`deploy.yml` 최근 실행 3건 (이 기록으로 지표를 계산합니다)
+`deploy.yml` 최근 실행 4건 (이 기록으로 지표를 계산합니다)
 
 | 실행 | 결과 | 완료 시각 (KST) | 커밋 | 트리거 |
 |---|:---:|---|---|---|
+| [#4](https://github.com/oocumu/teum-planner/actions/runs/43706173998) | ✅ 성공 | 11/15 19:52 | `6d3cf6e` docs: CONTRIBUTING 및 코드 리뷰 가이드 작성 (#3) | push |
 | [#3](https://github.com/oocumu/teum-planner/actions/runs/43691938602) | ✅ 성공 | 11/15 16:53 | `4b0ea53` fix: 템플릿 파일 위치 수정 및 DORA 문서 README 통합 (# | push |
 | [#2](https://github.com/oocumu/teum-planner/actions/runs/43690451529) | ✅ 성공 | 11/15 16:33 | `2c2dc02` chore: PR 템플릿과 CODEOWNERS 추가 (#1) | push |
 | [#1](https://github.com/oocumu/teum-planner/actions/runs/43689075774) | ❌ 실패 | 11/15 16:14 | `71baf1a` Add files via upload | push |
@@ -334,10 +335,11 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 
 매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).
 
-- 이번 실행: **`dora-metrics-3`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43691964142)
+- 이번 실행: **`dora-metrics-4`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43706200268)
 
 | 아티팩트 | 크기 | 생성 시각 (KST) |
 |---|---:|---|
+| [`dora-metrics-3`](https://github.com/oocumu/teum-planner/actions/runs/43691964142) | 144.2 KB | 11/15 16:54 |
 | [`dora-metrics-2`](https://github.com/oocumu/teum-planner/actions/runs/43690479384) | 146.1 KB | 11/15 16:34 |
 | [`dora-metrics-1`](https://github.com/oocumu/teum-planner/actions/runs/43689100437) | 140.3 KB | 11/15 16:15 |
 
@@ -347,23 +349,23 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 
 ```json
 {
-  "generated_at": "2026-11-15T07:54:20.139318+00:00",
+  "generated_at": "2026-11-15T10:53:45.432942+00:00",
   "repository": "oocumu/teum-planner",
   "summary": {
-    "deployments": 2,
-    "deploy_attempts": 3,
+    "deployments": 3,
+    "deploy_attempts": 4,
     "failed_deployments": 1,
-    "deployments_per_week": 0.25,
+    "deployments_per_week": 0.38,
     "lead_time_hours": 0.01,
-    "lead_time_samples": 3,
+    "lead_time_samples": 5,
     "mttr_hours": 0.31,
     "recovery_samples": 1,
-    "change_failure_rate": 33.3,
+    "change_failure_rate": 25.0,
     "grades": {
       "deployments_per_week": "🟡 Medium",
       "lead_time_hours": "🟢 Elite",
       "mttr_hours": "🟢 Elite",
-      "change_failure_rate": "🟡 Medium"
+      "change_failure_rate": "🔵 High"
     }
   }
 }

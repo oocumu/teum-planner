@@ -292,7 +292,7 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 #### 7.3.1 이번 주 지표
 
-> 자동 생성: 2026-11-15 21:09 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43712388884)
+> 자동 생성: 2026-11-15 21:10 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43712409605)
 
 | 지표 | 이번 주 (진행 중) | 지난 주 | 최근 8주 | 등급 (최근 8주) |
 |---|---:|---:|---:|:---:|
@@ -336,10 +336,11 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).
 
-- 이번 실행: **`dora-metrics-10`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43712388884)
+- 이번 실행: **`dora-metrics-12`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43712409605)
 
 | 아티팩트 | 크기 | 생성 시각 (KST) |
 |---|---:|---|
+| [`dora-metrics-10`](https://github.com/oocumu/teum-planner/actions/runs/43712388884) | 140.6 KB | 11/15 21:10 |
 | [`dora-metrics-9`](https://github.com/oocumu/teum-planner/actions/runs/43712323449) | 134.7 KB | 11/15 21:09 |
 | [`dora-metrics-8`](https://github.com/oocumu/teum-planner/actions/runs/43712210047) | 144.1 KB | 11/15 21:07 |
 | [`dora-metrics-6`](https://github.com/oocumu/teum-planner/actions/runs/43712135958) | 144.3 KB | 11/15 21:07 |
@@ -347,7 +348,6 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 | [`dora-metrics-4`](https://github.com/oocumu/teum-planner/actions/runs/43706200268) | 145.3 KB | 11/15 19:53 |
 | [`dora-metrics-3`](https://github.com/oocumu/teum-planner/actions/runs/43691964142) | 144.2 KB | 11/15 16:54 |
 | [`dora-metrics-2`](https://github.com/oocumu/teum-planner/actions/runs/43690479384) | 146.1 KB | 11/15 16:34 |
-| [`dora-metrics-1`](https://github.com/oocumu/teum-planner/actions/runs/43689100437) | 140.3 KB | 11/15 16:15 |
 
 같은 내용은 저장소에도 커밋됩니다: [`metrics/latest.json`](metrics/latest.json) · [`metrics/history.json`](metrics/history.json)
 
@@ -355,7 +355,7 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 ```json
 {
-  "generated_at": "2026-11-15T12:09:54.291253+00:00",
+  "generated_at": "2026-11-15T12:10:58.724942+00:00",
   "repository": "oocumu/teum-planner",
   "summary": {
     "deployments": 1,

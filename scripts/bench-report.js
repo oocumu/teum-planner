@@ -1,4 +1,5 @@
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 
 const [dir = 'bench', out = 'docs/ci-optimization-report.md'] = process.argv.slice(2);
@@ -63,6 +64,13 @@ const lines = [
   '| 중복 실행 | 없음 | `concurrency`로 이전 실행 취소 |',
   '',
 ];
+
+const MARKER = '<!-- 분석: 아래 내용은 리포트 재생성 시 유지됩니다 -->';
+if (existsSync(out)) {
+  const prev = await readFile(out, 'utf8');
+  const at = prev.indexOf(MARKER);
+  if (at !== -1) lines.push(prev.slice(at));
+}
 
 await mkdir(dirname(out), { recursive: true });
 await writeFile(out, lines.join('\n'));

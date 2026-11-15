@@ -240,14 +240,16 @@
 
 ### 3-1. 이번 주 지표
 
-> 자동 생성: 2026-11-09 04:31 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu-school/oss-dora/actions/runs/42515410134)
+> 자동 생성: 2026-11-15 16:15 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43689100437)
 
 | 지표 | 이번 주 (진행 중) | 지난 주 | 최근 8주 | 등급 (최근 8주) |
 |---|---:|---:|---:|:---:|
-| 배포 빈도 | 0회 | 0회 | 주 0.43회 | 🟡 Medium |
-| 변경 리드 타임 | — | — | 3분 | 🟢 Elite |
+| 배포 빈도 | 0회 | 0회 | 주 0.0회 | 🔴 Low |
+| 변경 리드 타임 | — | — | — | — |
 | 평균 복구 시간 (MTTR) | — | — | — | — |
-| 변경 실패율 | — | — | 0.0% | 🟢 Elite |
+| 변경 실패율 | 100.0% | — | 100.0% | 🔴 Low |
+
+> 🚨 11/15 16:14에 실패한 배포가 아직 복구되지 않았습니다.
 
 ![DORA 지표 추이](docs/dora/dora-chart.png)
 
@@ -255,11 +257,11 @@
 
 | 주 (월요일) | 배포 | 실패 | 리드 타임 | MTTR | 실패율 |
 |---|---:|---:|---:|---:|---:|
-| 2026-11-09 (진행 중) | 0 | 0 | — | — | — |
+| 2026-11-09 (진행 중) | 0 | 1 | — | — | 100.0% |
 | 2026-11-02 | 0 | 0 | — | — | — |
 | 2026-10-26 | 0 | 0 | — | — | — |
 | 2026-10-19 | 0 | 0 | — | — | — |
-| 2026-10-12 | 3 | 0 | 3분 | — | 0.0% |
+| 2026-10-12 | 0 | 0 | — | — | — |
 | 2026-10-05 | 0 | 0 | — | — | — |
 | 2026-09-28 | 0 | 0 | — | — | — |
 | 2026-09-21 | 0 | 0 | — | — | — |
@@ -268,35 +270,27 @@
 
 ### 3-2. 대시보드 화면
 
-실제 페이지: https://oocumu-school.github.io/oss-dora/
+실제 페이지: https://oocumu.github.io/teum-planner/
 
 ![대시보드 화면](docs/dora/dashboard.png)
 
 ### 3-3. 워크플로우 실행 결과
 
-`deploy.yml` 최근 실행 3건 (이 기록으로 지표를 계산합니다)
+`deploy.yml` 최근 실행 1건 (이 기록으로 지표를 계산합니다)
 
 | 실행 | 결과 | 완료 시각 (KST) | 커밋 | 트리거 |
 |---|:---:|---|---|---|
-| [#3](https://github.com/oocumu-school/oss-dora/actions/runs/38736377979) | ✅ 성공 | 10/15 21:40 | `ab0338c` feat: 대시보드 자동 캡처와 실행 기록 추가 | push |
-| [#2](https://github.com/oocumu-school/oss-dora/actions/runs/38735279759) | ✅ 성공 | 10/15 21:32 | `ea31153` chore: 작은 수정 | push |
-| [#1](https://github.com/oocumu-school/oss-dora/actions/runs/38734632351) | ✅ 성공 | 10/15 21:30 | `2362af2` DORA 지표 자동 수집 추가 | push |
+| [#1](https://github.com/oocumu/teum-planner/actions/runs/43689075774) | ❌ 실패 | 11/15 16:14 | `71baf1a` Add files via upload | push |
 
 ### 3-4. JSON 아티팩트
 
 매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).
 
-- 이번 실행: **`dora-metrics-8`** → [실행 페이지에서 다운로드](https://github.com/oocumu-school/oss-dora/actions/runs/42515410134)
+- 이번 실행: **`dora-metrics-1`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43689100437)
 
 | 아티팩트 | 크기 | 생성 시각 (KST) |
 |---|---:|---|
-| [`dora-metrics-7`](https://github.com/oocumu-school/oss-dora/actions/runs/41342192124) | 143.2 KB | 11/02 04:32 |
-| [`dora-metrics-6`](https://github.com/oocumu-school/oss-dora/actions/runs/40220819394) | 143.7 KB | 10/26 03:22 |
-| [`dora-metrics-5`](https://github.com/oocumu-school/oss-dora/actions/runs/39152214930) | 144.5 KB | 10/19 03:02 |
-| [`dora-metrics-4`](https://github.com/oocumu-school/oss-dora/actions/runs/38736431582) | 142.9 KB | 10/15 21:41 |
-| [`dora-metrics-3`](https://github.com/oocumu-school/oss-dora/actions/runs/38735385539) | 71.6 KB | 10/15 21:32 |
-| [`dora-metrics-2`](https://github.com/oocumu-school/oss-dora/actions/runs/38735118136) | 68.6 KB | 10/15 21:30 |
-| [`dora-metrics-1`](https://github.com/oocumu-school/oss-dora/actions/runs/38734664523) | 70.3 KB | 10/15 21:26 |
+| (이전 아티팩트 없음) | — | — |
 
 같은 내용은 저장소에도 커밋됩니다: [`metrics/latest.json`](metrics/latest.json) · [`metrics/history.json`](metrics/history.json)
 
@@ -304,23 +298,23 @@
 
 ```json
 {
-  "generated_at": "2026-11-08T19:31:17.867279+00:00",
-  "repository": "oocumu-school/oss-dora",
+  "generated_at": "2026-11-15T07:15:51.046052+00:00",
+  "repository": "oocumu/teum-planner",
   "summary": {
-    "deployments": 3,
-    "deploy_attempts": 3,
-    "failed_deployments": 0,
-    "deployments_per_week": 0.43,
-    "lead_time_hours": 0.05,
-    "lead_time_samples": 6,
+    "deployments": 0,
+    "deploy_attempts": 1,
+    "failed_deployments": 1,
+    "deployments_per_week": 0.0,
+    "lead_time_hours": null,
+    "lead_time_samples": 0,
     "mttr_hours": null,
     "recovery_samples": 0,
-    "change_failure_rate": 0.0,
+    "change_failure_rate": 100.0,
     "grades": {
-      "deployments_per_week": "🟡 Medium",
-      "lead_time_hours": "🟢 Elite",
+      "deployments_per_week": "🔴 Low",
+      "lead_time_hours": "—",
       "mttr_hours": "—",
-      "change_failure_rate": "🟢 Elite"
+      "change_failure_rate": "🔴 Low"
     }
   }
 }

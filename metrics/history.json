@@ -1,6 +1,6 @@
 {
-  "repository": "oocumu-school/oss-dora",
-  "updated_at": "2026-11-08T19:31:17.867279+00:00",
+  "repository": "oocumu/teum-planner",
+  "updated_at": "2026-11-15T07:15:51.046052+00:00",
   "weeks": [
     {
       "deployments": 0,
@@ -108,15 +108,15 @@
       "partial": false
     },
     {
-      "deployments": 3,
-      "deploy_attempts": 3,
+      "deployments": 0,
+      "deploy_attempts": 0,
       "failed_deployments": 0,
-      "deployments_per_week": 3.0,
-      "lead_time_hours": 0.05,
-      "lead_time_samples": 6,
+      "deployments_per_week": 0.0,
+      "lead_time_hours": null,
+      "lead_time_samples": 0,
       "mttr_hours": null,
       "recovery_samples": 0,
-      "change_failure_rate": 0.0,
+      "change_failure_rate": null,
       "week": "2026-W42",
       "start": "2026-10-12",
       "end": "2026-10-18",
@@ -169,14 +169,14 @@
     },
     {
       "deployments": 0,
-      "deploy_attempts": 0,
-      "failed_deployments": 0,
+      "deploy_attempts": 1,
+      "failed_deployments": 1,
       "deployments_per_week": 0.0,
       "lead_time_hours": null,
       "lead_time_samples": 0,
       "mttr_hours": null,
       "recovery_samples": 0,
-      "change_failure_rate": null,
+      "change_failure_rate": 100.0,
       "week": "2026-W46",
       "start": "2026-11-09",
       "end": "2026-11-15",

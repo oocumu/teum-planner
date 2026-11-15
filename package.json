@@ -1,0 +1,26 @@
+{
+  "name": "teum-planner",
+  "version": "0.1.0",
+  "description": "생각나는 대로 적으면 빈 시간에 일정을 채워 주는 웹 플래너",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "oocumu",
+  "repository": "github:oocumu/teum-planner",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "lint": "eslint .",
+    "test": "node --test",
+    "build": "node scripts/build.js",
+    "verify": "node scripts/verify-dist.js dist"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0"
+  }
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>틈 플래너</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>틈 플래너</h1>
+      <p>생각나는 대로 적으면 빈 시간에 일정을 채워 드립니다.</p>
+    </header>
+    <form id="form">
+      <textarea id="input" rows="5" placeholder="내일 3시 팀플 회의, 금요일까지 OSS 과제 2시간, 운동 좀 해야 함"></textarea>
+      <button type="submit">정리하기</button>
+    </form>
+    <p id="status" role="status"></p>
+    <section id="result"></section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

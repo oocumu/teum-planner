@@ -1,0 +1,87 @@
+name: Cache Benchmark
+
+on:
+  workflow_dispatch:
+    inputs:
+      runs:
+        description: 모드별 반복 횟수
+        default: '3'
+
+permissions:
+  contents: write
+
+jobs:
+  prime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-deps
+
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      runs: ${{ steps.r.outputs.runs }}
+    steps:
+      - id: r
+        run: echo "runs=$(node -p "JSON.stringify([...Array(${{ inputs.runs }}).keys()].map(i => i + 1))")" >> "$GITHUB_OUTPUT"
+
+  measure:
+    needs: [prime, plan]
+    strategy:
+      max-parallel: 2
+      matrix:
+        mode: [no-cache, cache]
+        run: ${{ fromJSON(needs.plan.outputs.runs) }}
+    runs-on: ubuntu-latest
+    name: "${{ matrix.mode }} #${{ matrix.run }}"
+    steps:
+      - uses: actions/checkout@v4
+      - id: start
+        run: echo "ms=$(node -p 'Date.now()')" >> "$GITHUB_OUTPUT"
+      - id: deps
+        uses: ./.github/actions/setup-deps
+        with:
+          cache: ${{ matrix.mode == 'cache' }}
+      - run: npm run lint && npm test
+      - run: |
+          node -e '
+            const total = (Date.now() - ${{ steps.start.outputs.ms }}) / 1000;
+            const out = {
+              mode: "${{ matrix.mode }}",
+              run: ${{ matrix.run }},
+              hit: "${{ steps.deps.outputs.cache-hit }}" === "true",
+              install: Number("${{ steps.deps.outputs.install-seconds }}"),
+              total: Number(total.toFixed(2)),
+            };
+            require("fs").writeFileSync("bench.json", JSON.stringify(out));
+            console.log(out);
+          '
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bench-${{ matrix.mode }}-${{ matrix.run }}
+          path: bench.json
+
+  report:
+    needs: measure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: bench-*
+          path: bench
+      - run: node scripts/bench-report.js bench docs/ci-optimization-report.md
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      - run: cat docs/ci-optimization-report.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ci-optimization-report
+          path: docs/ci-optimization-report.md
+      - continue-on-error: true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/ci-optimization-report.md
+          git commit -m "docs(ci): 캐시 벤치마크 리포트 갱신" || exit 0
+          git push

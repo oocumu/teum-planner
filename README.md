@@ -237,7 +237,7 @@
 GitHub Actions로 DORA 4대 지표(배포 빈도, 변경 리드 타임, 평균 복구 시간, 변경 실패율)를 자동 수집하고, Chart.js 대시보드와 아래 주간 리포트로 보여 준다.
 
 - 대시보드: https://oocumu.github.io/teum-planner/dashboard/
-- 워크플로우: [`dora-metrics.yml`](.github/workflows/dora-metrics.yml) (지표 수집) · [`deploy.yml`](.github/workflows/deploy.yml) (배포)
+- 워크플로우: [`dora-metrics.yml`](.github/workflows/dora-metrics.yml) (지표 수집) · [`ci.yml`](.github/workflows/ci.yml) (빌드·테스트·배포)
 - 수집 스크립트: [`scripts/collect_dora.py`](scripts/collect_dora.py)
 
 ### 7.1 과제 수행 항목
@@ -253,7 +253,7 @@ GitHub Actions로 DORA 4대 지표(배포 빈도, 변경 리드 타임, 평균 �
 ### 7.2 동작 구조
 
 ```
-main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 실행 기록이 "배포" 데이터
+main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 실행 기록이 "배포" 데이터
                       │ 완료되면
                       ▼
             DORA Metrics 워크플로우  ◀── 매주 월요일 00:05 KST / 수동 실행
@@ -392,10 +392,10 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 
 ### 7.5 개선 방향 및 한계
 
-- 배포를 "Deploy 워크플로우 성공"으로, 장애를 "배포 실패 + `incident` 이슈"로 근사했다. 실제 서비스라면 모니터링 알림이 incident 이슈를 자동으로 만들도록 연결해야 운영 장애까지 MTTR에 반영된다.
+- 배포를 "CI 워크플로우 성공"으로, 장애를 "배포 실패 + `incident` 이슈"로 근사했다. 실제 서비스라면 모니터링 알림이 incident 이슈를 자동으로 만들도록 연결해야 운영 장애까지 MTTR에 반영된다.
 - 리드 타임은 커밋 작성 시각 기준이라 rebase/amend로 시각이 바뀐 커밋은 실제보다 짧게 잡힐 수 있다. PR 기반 개발이라면 PR 생성 시각을 쓰는 방식도 고려할 수 있다.
 - 개인 과제 저장소라 배포 횟수가 적어 주별 값의 변동이 크다. 데이터가 쌓일수록 추세가 안정된다.
-- 자동 커밋은 `GITHUB_TOKEN`으로 하므로 Deploy를 다시 실행하지 않아 배포 횟수에 섞이지 않는다.
+- 자동 커밋은 `GITHUB_TOKEN`으로 하므로 CI를 다시 실행하지 않아 배포 횟수에 섞이지 않는다.
 
 
 <br/>

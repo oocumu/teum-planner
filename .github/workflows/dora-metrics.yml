@@ -1,7 +1,7 @@
 # DORA 4대 지표 자동 수집
 # 실행 시점
 #   - 매주 월요일 00:05 KST : 지난 주(월~일) 확정 리포트
-#   - Deploy 워크플로우가 끝날 때마다 : 이번 주(진행 중) 값 갱신
+#   - CI 워크플로우가 끝날 때마다 : 이번 주(진행 중) 값 갱신
 #   - Actions 탭에서 수동 실행
 # 결과
 #   - JSON 아티팩트(dora-metrics-<번호>) 업로드
@@ -12,7 +12,7 @@ on:
   schedule:
     - cron: "5 15 * * 0"        # UTC 일요일 15:05 = KST 월요일 00:05
   workflow_run:
-    workflows: ["Deploy"]       # deploy.yml 의 name 과 같아야 함
+    workflows: ["CI"]           # ci.yml 의 name 과 같아야 함
     types: [completed]
   workflow_dispatch:
     inputs:
@@ -30,7 +30,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  DEPLOY_WORKFLOW: deploy.yml   # 배포로 볼 워크플로우 파일명
+  DEPLOY_WORKFLOW: ci.yml       # 배포로 볼 워크플로우 파일명
   DEPLOY_BRANCH: main
   INCIDENT_LABEL: incident
 
@@ -58,7 +58,7 @@ jobs:
           HISTORY_WEEKS: ${{ inputs.history_weeks || '8' }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           RUN_NUMBER: ${{ github.run_number }}
-          DASHBOARD_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+          DASHBOARD_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/dashboard/
         run: python scripts/collect_dora.py
 
       - name: 대시보드 화면 캡처

@@ -229,16 +229,63 @@
 
 ## 7. 개발 지표 (DORA)
 
-> GitHub Actions가 DORA 4대 지표(배포 빈도, 변경 리드 타임, 평균 복구 시간, 변경 실패율)를 자동 수집하고 아래 리포트를 갱신합니다.
-> 지표 정의, 등급 기준, 동작 구조는 [`docs/dora/README.md`](docs/dora/README.md)를 참고하세요.
+GitHub Actions로 DORA 4대 지표(배포 빈도, 변경 리드 타임, 평균 복구 시간, 변경 실패율)를 자동 수집하고, Chart.js 대시보드와 아래 주간 리포트로 보여 준다.
+
+- 대시보드: https://oocumu.github.io/teum-planner/
+- 워크플로우: [`dora-metrics.yml`](.github/workflows/dora-metrics.yml) (지표 수집) · [`deploy.yml`](.github/workflows/deploy.yml) (배포)
+- 수집 스크립트: [`scripts/collect_dora.py`](scripts/collect_dora.py)
+
+### 7.1 과제 수행 항목
+
+| 요구 사항 | 구현 내용 |
+|---|---|
+| GitHub Actions로 DORA 4대 지표 자동 수집 | [`dora-metrics.yml`](.github/workflows/dora-metrics.yml)이 배포 후·매주 월요일·수동 실행 시 GitHub API로 지표를 계산 |
+| 대시보드 시안/구현 | `dashboard/index.html` (Chart.js), GitHub Pages로 배포 |
+| README에 이미지 첨부 | 지표 그래프(`dora-chart.png`)와 대시보드 화면 캡처(`dashboard.png`)를 워크플로우가 자동 생성·커밋 |
+| (선택) JSON 아티팩트 저장 | 매 실행마다 `dora-metrics-<번호>` 아티팩트 업로드 (`latest.json`, `history.json`, 이미지) |
+| (선택) 주간 보고서 자동 생성 | 아래 **7.3 주간 리포트** 구간이 README에 자동으로 갱신됨 |
+
+### 7.2 동작 구조
+
+```
+main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 실행 기록이 "배포" 데이터
+                      │ 완료되면
+                      ▼
+            DORA Metrics 워크플로우  ◀── 매주 월요일 00:05 KST / 수동 실행
+                      │  GitHub API: 배포 실행 기록 · 커밋 비교 · incident 이슈
+                      ▼
+      metrics/latest.json, metrics/history.json  ──▶ JSON 아티팩트 업로드
+      docs/dora/dora-chart.png, dashboard.png     ──▶ README 이미지 (그래프, 대시보드 자동 캡처)
+      README.md (7.3 주간 리포트 구간)            ──▶ 자동 커밋
+```
+
+#### 지표 정의
+
+| 지표 | 계산 방법 | 데이터 출처 |
+|---|---|---|
+| 배포 빈도 (Deployment Frequency) | 성공한 `Deploy` 실행 수 / 주 | Actions 실행 기록 |
+| 변경 리드 타임 (Lead Time for Changes) | 커밋 작성 시각 → 그 커밋이 포함된 첫 성공 배포 완료 시각, **중앙값** | 직전 성공 배포와 이번 배포 사이의 커밋 비교 |
+| 평균 복구 시간 (MTTR) | 배포 실패 → 다음 성공 배포까지 시간 + `incident` 라벨 이슈의 생성 → 종료 시간, **평균** | Actions 실행 기록, Issues |
+| 변경 실패율 (Change Failure Rate) | 실패한 배포 수 ÷ 전체 배포 시도 수 (취소·건너뜀 제외) | Actions 실행 기록 |
+
+#### 등급 기준 (Accelerate State of DevOps 보고서 구간을 단순화)
+
+| 등급 | 배포 빈도 | 리드 타임 | MTTR | 변경 실패율 |
+|---|---|---|---|---|
+| 🟢 Elite | 주 7회 이상 | 1일 미만 | 1시간 미만 | 15% 이하 |
+| 🔵 High | 주 1회 이상 | 1주 미만 | 1일 미만 | 30% 이하 |
+| 🟡 Medium | 월 1회 이상 | 1개월 미만 | 1주 미만 | 45% 이하 |
+| 🔴 Low | 그 미만 | 1개월 이상 | 1주 이상 | 45% 초과 |
+
+> 주 단위는 한국 시간 월요일 00:00 ~ 일요일 23:59입니다. 최근 8주는 실행할 때마다 API에서 다시 계산합니다.
 
 <!-- DORA:START -->
 
-## 3. 주간 리포트 (자동 생성)
+### 7.3 주간 리포트 (자동 생성)
 
-> 이 구간(3-1 ~ 3-4)은 `DORA Metrics` 워크플로우가 실행될 때마다 자동으로 다시 작성됩니다.
+> 이 구간(7.3.1 ~ 7.3.4)은 `DORA Metrics` 워크플로우가 실행될 때마다 자동으로 다시 작성됩니다.
 
-### 3-1. 이번 주 지표
+#### 7.3.1 이번 주 지표
 
 > 자동 생성: 2026-11-15 16:34 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43690479384)
 
@@ -266,13 +313,13 @@
 
 </details>
 
-### 3-2. 대시보드 화면
+#### 7.3.2 대시보드 화면
 
 실제 페이지: https://oocumu.github.io/teum-planner/
 
 ![대시보드 화면](docs/dora/dashboard.png)
 
-### 3-3. 워크플로우 실행 결과
+#### 7.3.3 워크플로우 실행 결과
 
 `deploy.yml` 최근 실행 2건 (이 기록으로 지표를 계산합니다)
 
@@ -281,7 +328,7 @@
 | [#2](https://github.com/oocumu/teum-planner/actions/runs/43690451529) | ✅ 성공 | 11/15 16:33 | `2c2dc02` chore: PR 템플릿과 CODEOWNERS 추가 (#1) | push |
 | [#1](https://github.com/oocumu/teum-planner/actions/runs/43689075774) | ❌ 실패 | 11/15 16:14 | `71baf1a` Add files via upload | push |
 
-### 3-4. JSON 아티팩트
+#### 7.3.4 JSON 아티팩트
 
 매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).
 
@@ -322,6 +369,21 @@
 </details>
 
 <!-- DORA:END -->
+
+### 7.4 결과 분석
+
+- **배포 빈도**: 저장소를 teum-planner로 옮긴 뒤 배포가 2번(성공 1, 실패 1)뿐이라 최근 8주 평균 주 0.13회로 Low 등급이다. 아직 기능 개발 전이라 배포할 일이 많지 않았다.
+- **변경 리드 타임**: 1분(Elite). PR을 병합하면 바로 main에 반영되고 배포까지 이어져서 짧게 나왔다.
+- **MTTR**: 19분(Elite). 첫 배포가 실패하고 다음 배포가 성공할 때까지 걸린 시간이다.
+- **변경 실패율**: 2번 중 1번 실패로 50%(Low). 첫 배포(Deploy #1)는 저장소에 GitHub Pages가 아직 켜져 있지 않아 `configure-pages` 단계에서 `Get Pages site failed` 오류로 실패했다. Settings에서 Pages 소스를 GitHub Actions로 바꾼 뒤 다음 배포는 정상적으로 성공했다.
+
+### 7.5 개선 방향 및 한계
+
+- 배포를 "Deploy 워크플로우 성공"으로, 장애를 "배포 실패 + `incident` 이슈"로 근사했다. 실제 서비스라면 모니터링 알림이 incident 이슈를 자동으로 만들도록 연결해야 운영 장애까지 MTTR에 반영된다.
+- 리드 타임은 커밋 작성 시각 기준이라 rebase/amend로 시각이 바뀐 커밋은 실제보다 짧게 잡힐 수 있다. PR 기반 개발이라면 PR 생성 시각을 쓰는 방식도 고려할 수 있다.
+- 개인 과제 저장소라 배포 횟수가 적어 주별 값의 변동이 크다. 데이터가 쌓일수록 추세가 안정된다.
+- 자동 커밋은 `GITHUB_TOKEN`으로 하므로 Deploy를 다시 실행하지 않아 배포 횟수에 섞이지 않는다.
+
 
 <br/>
 

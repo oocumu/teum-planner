@@ -395,9 +395,9 @@ def render_readme_section(latest: dict, history: list[dict], chart_rel: str | No
     ]
     gen = parse_ts(latest["generated_at"]).astimezone(KST).strftime("%Y-%m-%d %H:%M KST")
     n = latest["config"]["history_weeks"]
-    out = [MARK_START, "", "## 3. 주간 리포트 (자동 생성)", "",
-           "> 이 구간(3-1 ~ 3-4)은 `DORA Metrics` 워크플로우가 실행될 때마다 자동으로 다시 작성됩니다.", "",
-           "### 3-1. 이번 주 지표", ""]
+    out = [MARK_START, "", "### 7.3 주간 리포트 (자동 생성)", "",
+           "> 이 구간(7.3.1 ~ 7.3.4)은 `DORA Metrics` 워크플로우가 실행될 때마다 자동으로 다시 작성됩니다.", "",
+           "#### 7.3.1 이번 주 지표", ""]
     if demo:
         out += ["> ⚠️ **데모 데이터입니다.** 실제 저장소 기록이 아닙니다.", ""]
     run = f" · [수집 실행 로그]({latest['run_url']})" if latest.get("run_url") else ""
@@ -427,15 +427,15 @@ def render_readme_section(latest: dict, history: list[dict], chart_rel: str | No
                    f"{fmt_pct(w['change_failure_rate'])} |")
     out += ["", "</details>", ""]
 
-    # 3-2. 대시보드 화면 (워크플로우가 Playwright 로 캡처)
-    out += ["### 3-2. 대시보드 화면", ""]
+    # 7.3.2 대시보드 화면 (워크플로우가 Playwright 로 캡처)
+    out += ["#### 7.3.2 대시보드 화면", ""]
     if latest.get("dashboard_url"):
         out += [f"실제 페이지: {latest['dashboard_url']}", ""]
     out += ["![대시보드 화면](docs/dora/dashboard.png)", ""]
 
-    # 3-3. 워크플로우 실행 결과
+    # 7.3.3 워크플로우 실행 결과
     deploys = latest.get("recent_deploys", [])
-    out += ["### 3-3. 워크플로우 실행 결과", "",
+    out += ["#### 7.3.3 워크플로우 실행 결과", "",
             f"`{latest['config']['deploy_workflow']}` 최근 실행 {len(deploys)}건 "
             "(이 기록으로 지표를 계산합니다)", "",
             "| 실행 | 결과 | 완료 시각 (KST) | 커밋 | 트리거 |",
@@ -449,9 +449,9 @@ def render_readme_section(latest: dict, history: list[dict], chart_rel: str | No
         out.append("| — | — | — | — | — |")
     out.append("")
 
-    # 3-4. JSON 아티팩트
+    # 7.3.4 JSON 아티팩트
     arts = latest.get("artifacts", [])
-    out += ["### 3-4. JSON 아티팩트", "",
+    out += ["#### 7.3.4 JSON 아티팩트", "",
             "매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).", ""]
     if latest.get("run_number"):
         out += [f"- 이번 실행: **`dora-metrics-{latest['run_number']}`** → [실행 페이지에서 다운로드]({latest['run_url']})", ""]

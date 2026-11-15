@@ -78,10 +78,13 @@ jobs:
         with:
           name: ci-optimization-report
           path: docs/ci-optimization-report.md
-      - continue-on-error: true
-        run: |
+      - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/ci-optimization-report.md
           git commit -m "docs(ci): 캐시 벤치마크 리포트 갱신" || exit 0
-          git push
+          for i in 1 2 3; do
+            git pull --rebase origin "${{ github.event.repository.default_branch }}" && git push && exit 0
+            sleep 10
+          done
+          exit 1

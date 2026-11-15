@@ -1,0 +1,44 @@
+title: "[RFC] "
+labels: ["rfc"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        설계 변경 제안입니다. 7일간 의견을 받은 뒤 결론을 정리하고,
+        채택되면 `docs/adr/`에 ADR로 기록합니다.
+  - type: textarea
+    id: summary
+    attributes:
+      label: 요약 (Summary)
+      description: 무엇을 바꾸자는 제안인지 2~3문장으로
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 동기 (Motivation)
+      description: 왜 필요한가요? 지금 어떤 문제가 있나요?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 제안 내용 (Detailed Design)
+      description: 구체적인 설계, 코드 구조, 예시
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 대안 (Alternatives)
+      description: 검토했지만 고르지 않은 방법과 이유
+  - type: textarea
+    id: questions
+    attributes:
+      label: 미해결 질문 (Unresolved Questions)
+      description: 토론에서 의견을 받고 싶은 부분
+  - type: input
+    id: deadline
+    attributes:
+      label: 의견 수렴 마감일
+      placeholder: "YYYY-MM-DD"

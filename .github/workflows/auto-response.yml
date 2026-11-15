@@ -1,0 +1,55 @@
+name: Auto Response
+
+on:
+  issues:
+    types: [opened]
+  discussion:
+    types: [created]
+
+permissions:
+  issues: write
+  discussions: write
+
+jobs:
+  issue-greeting:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const number = context.issue.number;
+            await github.rest.issues.createComment({
+              owner, repo, issue_number: number,
+              body: [
+                `@${context.payload.issue.user.login} 님, 이슈 감사합니다.`,
+                '',
+                '- 담당자가 **48시간 안에** 첫 응답을 드립니다 (SLA).',
+                '- 실행 문제라면 먼저 [Troubleshooting](../wiki/Troubleshooting) 문서를 확인해 주세요.',
+                '- 설계 변경 제안은 Discussions의 RFC 카테고리를 이용해 주세요.',
+              ].join('\n'),
+            });
+            await github.rest.issues.addLabels({
+              owner, repo, issue_number: number,
+              labels: ['needs-triage'],
+            });
+
+  discussion-greeting:
+    if: github.event_name == 'discussion'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const d = context.payload.discussion;
+            const isRFC = d.category.name.includes('RFC');
+            const body = isRFC
+              ? 'RFC가 등록되었습니다. 7일간 의견을 받은 뒤 결론을 정리하고, 채택되면 `docs/adr/`에 ADR로 기록합니다.'
+              : '글 감사합니다. 72시간 안에 답변드리겠습니다. 해결되면 도움이 된 댓글을 Mark as answer로 표시해 주세요.';
+            await github.graphql(
+              `mutation($id: ID!, $body: String!) {
+                 addDiscussionComment(input: {discussionId: $id, body: $body}) { comment { id } }
+               }`,
+              { id: d.node_id, body }
+            );

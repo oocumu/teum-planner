@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-15T12:10:58.724942+00:00",
+  "generated_at": "2026-11-15T12:12:09.871780+00:00",
   "repository": "oocumu/teum-planner",
   "demo": false,
-  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43712409605",
+  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43712563886",
   "config": {
     "repo": "oocumu/teum-planner",
     "deploy_workflow": "ci.yml",
@@ -11,12 +11,12 @@
     "history_weeks": 8
   },
   "current_week": {
-    "deployments": 1,
-    "deploy_attempts": 1,
+    "deployments": 2,
+    "deploy_attempts": 2,
     "failed_deployments": 0,
-    "deployments_per_week": 1.0,
+    "deployments_per_week": 2.0,
     "lead_time_hours": 0.02,
-    "lead_time_samples": 1,
+    "lead_time_samples": 3,
     "mttr_hours": null,
     "recovery_samples": 0,
     "change_failure_rate": 0.0,
@@ -41,17 +41,17 @@
     "partial": false
   },
   "summary": {
-    "deployments": 1,
-    "deploy_attempts": 1,
+    "deployments": 2,
+    "deploy_attempts": 2,
     "failed_deployments": 0,
-    "deployments_per_week": 0.13,
+    "deployments_per_week": 0.25,
     "lead_time_hours": 0.02,
-    "lead_time_samples": 1,
+    "lead_time_samples": 3,
     "mttr_hours": null,
     "recovery_samples": 0,
     "change_failure_rate": 0.0,
     "grades": {
-      "deployments_per_week": "🔴 Low",
+      "deployments_per_week": "🟡 Medium",
       "lead_time_hours": "🟢 Elite",
       "mttr_hours": "—",
       "change_failure_rate": "🟢 Elite"
@@ -64,9 +64,18 @@
     "mttr": "배포 실패 → 다음 성공 배포까지 걸린 시간 + incident 이슈 생성→종료 시간 (평균)",
     "change_failure_rate": "실패한 배포 실행 수 ÷ 전체 배포 시도 수 (cancelled/skipped 제외)"
   },
-  "run_number": "12",
+  "run_number": "13",
   "dashboard_url": "https://oocumu.github.io/teum-planner/dashboard/",
   "recent_deploys": [
+    {
+      "number": 6,
+      "conclusion": "success",
+      "sha": "a5baa4bf45a3a68f847014c3d88f290ea3aef247",
+      "title": "ci: Composite Action·Reusable Workflow·캐시·선택적 배포 적용 (#9)",
+      "event": "push",
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43712440046",
+      "finished": "2026-11-15T12:11:23+00:00"
+    },
     {
       "number": 3,
       "conclusion": "success",
@@ -78,6 +87,13 @@
     }
   ],
   "artifacts": [
+    {
+      "name": "dora-metrics-12",
+      "size": 144374,
+      "created": "2026-11-15T12:11:08+00:00",
+      "expired": false,
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43712409605"
+    },
     {
       "name": "dora-metrics-10",
       "size": 143993,
@@ -126,13 +142,6 @@
       "created": "2026-11-15T07:54:30+00:00",
       "expired": false,
       "url": "https://github.com/oocumu/teum-planner/actions/runs/43691964142"
-    },
-    {
-      "name": "dora-metrics-2",
-      "size": 149587,
-      "created": "2026-11-15T07:34:16+00:00",
-      "expired": false,
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43690479384"
     }
   ]
 }

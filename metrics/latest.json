@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-15T07:34:08.918809+00:00",
+  "generated_at": "2026-11-15T07:54:20.139318+00:00",
   "repository": "oocumu/teum-planner",
   "demo": false,
-  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43690479384",
+  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43691964142",
   "config": {
     "repo": "oocumu/teum-planner",
     "deploy_workflow": "deploy.yml",
@@ -11,15 +11,15 @@
     "history_weeks": 8
   },
   "current_week": {
-    "deployments": 1,
-    "deploy_attempts": 2,
+    "deployments": 2,
+    "deploy_attempts": 3,
     "failed_deployments": 1,
-    "deployments_per_week": 1.0,
+    "deployments_per_week": 2.0,
     "lead_time_hours": 0.01,
-    "lead_time_samples": 1,
+    "lead_time_samples": 3,
     "mttr_hours": 0.31,
     "recovery_samples": 1,
-    "change_failure_rate": 50.0,
+    "change_failure_rate": 33.3,
     "week": "2026-W46",
     "start": "2026-11-09",
     "end": "2026-11-15",
@@ -41,20 +41,20 @@
     "partial": false
   },
   "summary": {
-    "deployments": 1,
-    "deploy_attempts": 2,
+    "deployments": 2,
+    "deploy_attempts": 3,
     "failed_deployments": 1,
-    "deployments_per_week": 0.13,
+    "deployments_per_week": 0.25,
     "lead_time_hours": 0.01,
-    "lead_time_samples": 1,
+    "lead_time_samples": 3,
     "mttr_hours": 0.31,
     "recovery_samples": 1,
-    "change_failure_rate": 50.0,
+    "change_failure_rate": 33.3,
     "grades": {
-      "deployments_per_week": "🔴 Low",
+      "deployments_per_week": "🟡 Medium",
       "lead_time_hours": "🟢 Elite",
       "mttr_hours": "🟢 Elite",
-      "change_failure_rate": "🔴 Low"
+      "change_failure_rate": "🟡 Medium"
     }
   },
   "open_failure_since": null,
@@ -64,9 +64,18 @@
     "mttr": "배포 실패 → 다음 성공 배포까지 걸린 시간 + incident 이슈 생성→종료 시간 (평균)",
     "change_failure_rate": "실패한 배포 실행 수 ÷ 전체 배포 시도 수 (cancelled/skipped 제외)"
   },
-  "run_number": "2",
+  "run_number": "3",
   "dashboard_url": "https://oocumu.github.io/teum-planner/",
   "recent_deploys": [
+    {
+      "number": 3,
+      "conclusion": "success",
+      "sha": "4b0ea537a054563b60385c57485dcc9f4f6a4ecb",
+      "title": "fix: 템플릿 파일 위치 수정 및 DORA 문서 README 통합 (#2)",
+      "event": "push",
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43691938602",
+      "finished": "2026-11-15T07:53:35+00:00"
+    },
     {
       "number": 2,
       "conclusion": "success",
@@ -87,6 +96,13 @@
     }
   ],
   "artifacts": [
+    {
+      "name": "dora-metrics-2",
+      "size": 149587,
+      "created": "2026-11-15T07:34:16+00:00",
+      "expired": false,
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43690479384"
+    },
     {
       "name": "dora-metrics-1",
       "size": 143712,

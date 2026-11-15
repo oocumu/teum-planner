@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-15T07:15:51.046052+00:00",
+  "generated_at": "2026-11-15T07:34:08.918809+00:00",
   "repository": "oocumu/teum-planner",
   "demo": false,
-  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43689100437",
+  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43690479384",
   "config": {
     "repo": "oocumu/teum-planner",
     "deploy_workflow": "deploy.yml",
@@ -11,15 +11,15 @@
     "history_weeks": 8
   },
   "current_week": {
-    "deployments": 0,
-    "deploy_attempts": 1,
+    "deployments": 1,
+    "deploy_attempts": 2,
     "failed_deployments": 1,
-    "deployments_per_week": 0.0,
-    "lead_time_hours": null,
-    "lead_time_samples": 0,
-    "mttr_hours": null,
-    "recovery_samples": 0,
-    "change_failure_rate": 100.0,
+    "deployments_per_week": 1.0,
+    "lead_time_hours": 0.01,
+    "lead_time_samples": 1,
+    "mttr_hours": 0.31,
+    "recovery_samples": 1,
+    "change_failure_rate": 50.0,
     "week": "2026-W46",
     "start": "2026-11-09",
     "end": "2026-11-15",
@@ -41,32 +41,41 @@
     "partial": false
   },
   "summary": {
-    "deployments": 0,
-    "deploy_attempts": 1,
+    "deployments": 1,
+    "deploy_attempts": 2,
     "failed_deployments": 1,
-    "deployments_per_week": 0.0,
-    "lead_time_hours": null,
-    "lead_time_samples": 0,
-    "mttr_hours": null,
-    "recovery_samples": 0,
-    "change_failure_rate": 100.0,
+    "deployments_per_week": 0.13,
+    "lead_time_hours": 0.01,
+    "lead_time_samples": 1,
+    "mttr_hours": 0.31,
+    "recovery_samples": 1,
+    "change_failure_rate": 50.0,
     "grades": {
       "deployments_per_week": "🔴 Low",
-      "lead_time_hours": "—",
-      "mttr_hours": "—",
+      "lead_time_hours": "🟢 Elite",
+      "mttr_hours": "🟢 Elite",
       "change_failure_rate": "🔴 Low"
     }
   },
-  "open_failure_since": "2026-11-15T07:14:59+00:00",
+  "open_failure_since": null,
   "definitions": {
     "deployment_frequency": "집계 기간 동안 성공한 배포 워크플로우 실행 수 (주당 평균)",
     "lead_time": "커밋 작성 시각 → 그 커밋이 포함된 첫 성공 배포 완료 시각 (중앙값)",
     "mttr": "배포 실패 → 다음 성공 배포까지 걸린 시간 + incident 이슈 생성→종료 시간 (평균)",
     "change_failure_rate": "실패한 배포 실행 수 ÷ 전체 배포 시도 수 (cancelled/skipped 제외)"
   },
-  "run_number": "1",
+  "run_number": "2",
   "dashboard_url": "https://oocumu.github.io/teum-planner/",
   "recent_deploys": [
+    {
+      "number": 2,
+      "conclusion": "success",
+      "sha": "2c2dc0280a0bee5c2c6647ba0ad9b6af1c4cb91c",
+      "title": "chore: PR 템플릿과 CODEOWNERS 추가 (#1)",
+      "event": "push",
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43690451529",
+      "finished": "2026-11-15T07:33:29+00:00"
+    },
     {
       "number": 1,
       "conclusion": "failure",
@@ -77,5 +86,13 @@
       "finished": "2026-11-15T07:14:59+00:00"
     }
   ],
-  "artifacts": []
+  "artifacts": [
+    {
+      "name": "dora-metrics-1",
+      "size": 143712,
+      "created": "2026-11-15T07:15:59+00:00",
+      "expired": false,
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43689100437"
+    }
+  ]
 }

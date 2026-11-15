@@ -240,16 +240,14 @@
 
 ### 3-1. 이번 주 지표
 
-> 자동 생성: 2026-11-15 16:15 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43689100437)
+> 자동 생성: 2026-11-15 16:34 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43690479384)
 
 | 지표 | 이번 주 (진행 중) | 지난 주 | 최근 8주 | 등급 (최근 8주) |
 |---|---:|---:|---:|:---:|
-| 배포 빈도 | 0회 | 0회 | 주 0.0회 | 🔴 Low |
-| 변경 리드 타임 | — | — | — | — |
-| 평균 복구 시간 (MTTR) | — | — | — | — |
-| 변경 실패율 | 100.0% | — | 100.0% | 🔴 Low |
-
-> 🚨 11/15 16:14에 실패한 배포가 아직 복구되지 않았습니다.
+| 배포 빈도 | 1회 | 0회 | 주 0.13회 | 🔴 Low |
+| 변경 리드 타임 | 1분 | — | 1분 | 🟢 Elite |
+| 평균 복구 시간 (MTTR) | 19분 | — | 19분 | 🟢 Elite |
+| 변경 실패율 | 50.0% | — | 50.0% | 🔴 Low |
 
 ![DORA 지표 추이](docs/dora/dora-chart.png)
 
@@ -257,7 +255,7 @@
 
 | 주 (월요일) | 배포 | 실패 | 리드 타임 | MTTR | 실패율 |
 |---|---:|---:|---:|---:|---:|
-| 2026-11-09 (진행 중) | 0 | 1 | — | — | 100.0% |
+| 2026-11-09 (진행 중) | 1 | 1 | 1분 | 19분 | 50.0% |
 | 2026-11-02 | 0 | 0 | — | — | — |
 | 2026-10-26 | 0 | 0 | — | — | — |
 | 2026-10-19 | 0 | 0 | — | — | — |
@@ -276,21 +274,22 @@
 
 ### 3-3. 워크플로우 실행 결과
 
-`deploy.yml` 최근 실행 1건 (이 기록으로 지표를 계산합니다)
+`deploy.yml` 최근 실행 2건 (이 기록으로 지표를 계산합니다)
 
 | 실행 | 결과 | 완료 시각 (KST) | 커밋 | 트리거 |
 |---|:---:|---|---|---|
+| [#2](https://github.com/oocumu/teum-planner/actions/runs/43690451529) | ✅ 성공 | 11/15 16:33 | `2c2dc02` chore: PR 템플릿과 CODEOWNERS 추가 (#1) | push |
 | [#1](https://github.com/oocumu/teum-planner/actions/runs/43689075774) | ❌ 실패 | 11/15 16:14 | `71baf1a` Add files via upload | push |
 
 ### 3-4. JSON 아티팩트
 
 매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).
 
-- 이번 실행: **`dora-metrics-1`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43689100437)
+- 이번 실행: **`dora-metrics-2`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43690479384)
 
 | 아티팩트 | 크기 | 생성 시각 (KST) |
 |---|---:|---|
-| (이전 아티팩트 없음) | — | — |
+| [`dora-metrics-1`](https://github.com/oocumu/teum-planner/actions/runs/43689100437) | 140.3 KB | 11/15 16:15 |
 
 같은 내용은 저장소에도 커밋됩니다: [`metrics/latest.json`](metrics/latest.json) · [`metrics/history.json`](metrics/history.json)
 
@@ -298,22 +297,22 @@
 
 ```json
 {
-  "generated_at": "2026-11-15T07:15:51.046052+00:00",
+  "generated_at": "2026-11-15T07:34:08.918809+00:00",
   "repository": "oocumu/teum-planner",
   "summary": {
-    "deployments": 0,
-    "deploy_attempts": 1,
+    "deployments": 1,
+    "deploy_attempts": 2,
     "failed_deployments": 1,
-    "deployments_per_week": 0.0,
-    "lead_time_hours": null,
-    "lead_time_samples": 0,
-    "mttr_hours": null,
-    "recovery_samples": 0,
-    "change_failure_rate": 100.0,
+    "deployments_per_week": 0.13,
+    "lead_time_hours": 0.01,
+    "lead_time_samples": 1,
+    "mttr_hours": 0.31,
+    "recovery_samples": 1,
+    "change_failure_rate": 50.0,
     "grades": {
       "deployments_per_week": "🔴 Low",
-      "lead_time_hours": "—",
-      "mttr_hours": "—",
+      "lead_time_hours": "🟢 Elite",
+      "mttr_hours": "🟢 Elite",
       "change_failure_rate": "🔴 Low"
     }
   }

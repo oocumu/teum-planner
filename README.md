@@ -292,11 +292,11 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 #### 7.3.1 이번 주 지표
 
-> 자동 생성: 2026-11-15 21:15 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43712863528)
+> 자동 생성: 2026-11-15 21:16 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43712922686)
 
 | 지표 | 이번 주 (진행 중) | 지난 주 | 최근 8주 | 등급 (최근 8주) |
 |---|---:|---:|---:|:---:|
-| 배포 빈도 | 3회 | 0회 | 주 0.38회 | 🟡 Medium |
+| 배포 빈도 | 4회 | 0회 | 주 0.5회 | 🟡 Medium |
 | 변경 리드 타임 | 2분 | — | 2분 | 🟢 Elite |
 | 평균 복구 시간 (MTTR) | — | — | — | — |
 | 변경 실패율 | 0.0% | — | 0.0% | 🟢 Elite |
@@ -307,7 +307,7 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 | 주 (월요일) | 배포 | 실패 | 리드 타임 | MTTR | 실패율 |
 |---|---:|---:|---:|---:|---:|
-| 2026-11-09 (진행 중) | 3 | 0 | 2분 | — | 0.0% |
+| 2026-11-09 (진행 중) | 4 | 0 | 2분 | — | 0.0% |
 | 2026-11-02 | 0 | 0 | — | — | — |
 | 2026-10-26 | 0 | 0 | — | — | — |
 | 2026-10-19 | 0 | 0 | — | — | — |
@@ -326,10 +326,11 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 #### 7.3.3 워크플로우 실행 결과
 
-`ci.yml` 최근 실행 3건 (이 기록으로 지표를 계산합니다)
+`ci.yml` 최근 실행 4건 (이 기록으로 지표를 계산합니다)
 
 | 실행 | 결과 | 완료 시각 (KST) | 커밋 | 트리거 |
 |---|:---:|---|---|---|
+| [#14](https://github.com/oocumu/teum-planner/actions/runs/43712948178) | ✅ 성공 | 11/15 21:16 | `8a5d78b` docs(ci): 캐시 전후·파이프라인 전후 비교 분석 추가 (#13) | push |
 | [#9](https://github.com/oocumu/teum-planner/actions/runs/43712604532) | ✅ 성공 | 11/15 21:12 | `25c9e26` fix(ci): 벤치마크 리포트 커밋 시 원격 변경을 반영해 재시도 (# | push |
 | [#6](https://github.com/oocumu/teum-planner/actions/runs/43712440046) | ✅ 성공 | 11/15 21:11 | `a5baa4b` ci: Composite Action·Reusable Workflow·캐 | push |
 | [#3](https://github.com/oocumu/teum-planner/actions/runs/43712297451) | ✅ 성공 | 11/15 21:09 | `d0c8ee5` ci: Lint→Build→Test(Matrix)→Deploy 파이프라인 | push |
@@ -338,10 +339,11 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).
 
-- 이번 실행: **`dora-metrics-17`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43712863528)
+- 이번 실행: **`dora-metrics-19`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43712922686)
 
 | 아티팩트 | 크기 | 생성 시각 (KST) |
 |---|---:|---|
+| [`dora-metrics-17`](https://github.com/oocumu/teum-planner/actions/runs/43712863528) | 140.5 KB | 11/15 21:15 |
 | [`dora-metrics-16`](https://github.com/oocumu/teum-planner/actions/runs/43712699321) | 140.5 KB | 11/15 21:14 |
 | [`dora-metrics-14`](https://github.com/oocumu/teum-planner/actions/runs/43712663685) | 140.3 KB | 11/15 21:13 |
 | [`dora-metrics-13`](https://github.com/oocumu/teum-planner/actions/runs/43712563886) | 145.6 KB | 11/15 21:12 |
@@ -349,7 +351,6 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 | [`dora-metrics-10`](https://github.com/oocumu/teum-planner/actions/runs/43712388884) | 140.6 KB | 11/15 21:10 |
 | [`dora-metrics-9`](https://github.com/oocumu/teum-planner/actions/runs/43712323449) | 134.7 KB | 11/15 21:09 |
 | [`dora-metrics-8`](https://github.com/oocumu/teum-planner/actions/runs/43712210047) | 144.1 KB | 11/15 21:07 |
-| [`dora-metrics-6`](https://github.com/oocumu/teum-planner/actions/runs/43712135958) | 144.3 KB | 11/15 21:07 |
 
 같은 내용은 저장소에도 커밋됩니다: [`metrics/latest.json`](metrics/latest.json) · [`metrics/history.json`](metrics/history.json)
 
@@ -357,15 +358,15 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 ```json
 {
-  "generated_at": "2026-11-15T12:15:37.129968+00:00",
+  "generated_at": "2026-11-15T12:16:44.755139+00:00",
   "repository": "oocumu/teum-planner",
   "summary": {
-    "deployments": 3,
-    "deploy_attempts": 3,
+    "deployments": 4,
+    "deploy_attempts": 4,
     "failed_deployments": 0,
-    "deployments_per_week": 0.38,
+    "deployments_per_week": 0.5,
     "lead_time_hours": 0.03,
-    "lead_time_samples": 6,
+    "lead_time_samples": 13,
     "mttr_hours": null,
     "recovery_samples": 0,
     "change_failure_rate": 0.0,

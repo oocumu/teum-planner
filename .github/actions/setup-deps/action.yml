@@ -1,0 +1,39 @@
+name: Setup dependencies
+description: Node.js 설치와 npm 의존성 설치(캐시 선택)
+inputs:
+  node-version:
+    description: Node.js 버전
+    default: '22'
+  cache:
+    description: npm 캐시 사용 여부
+    default: 'true'
+outputs:
+  cache-hit:
+    description: 캐시 적중 여부
+    value: ${{ steps.cache.outputs.cache-hit }}
+  install-seconds:
+    description: npm install 소요 시간(초)
+    value: ${{ steps.install.outputs.seconds }}
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+    - id: npm-cache-dir
+      shell: bash
+      run: echo "dir=$(npm config get cache)" >> "$GITHUB_OUTPUT"
+    - id: cache
+      if: inputs.cache == 'true'
+      uses: actions/cache@v4
+      with:
+        path: ${{ steps.npm-cache-dir.outputs.dir }}
+        key: npm-${{ runner.os }}-node${{ inputs.node-version }}-${{ hashFiles('package.json') }}
+        restore-keys: npm-${{ runner.os }}-node${{ inputs.node-version }}-
+    - id: install
+      shell: bash
+      run: |
+        start=$(node -p "Date.now()")
+        npm install --prefer-offline --no-audit --no-fund
+        end=$(node -p "Date.now()")
+        echo "seconds=$(node -p "(($end - $start) / 1000).toFixed(2)")" >> "$GITHUB_OUTPUT"

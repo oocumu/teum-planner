@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-11-15T12:07:49.932183+00:00",
+  "generated_at": "2026-11-15T12:09:08.463954+00:00",
   "repository": "oocumu/teum-planner",
   "demo": false,
-  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43712210047",
+  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43712323449",
   "config": {
     "repo": "oocumu/teum-planner",
-    "deploy_workflow": "deploy.yml",
+    "deploy_workflow": "ci.yml",
     "branch": "main",
     "incident_label": "incident",
     "history_weeks": 8
   },
   "current_week": {
-    "deployments": 7,
-    "deploy_attempts": 8,
-    "failed_deployments": 1,
-    "deployments_per_week": 7.0,
-    "lead_time_hours": 0.01,
-    "lead_time_samples": 11,
-    "mttr_hours": 0.31,
-    "recovery_samples": 1,
-    "change_failure_rate": 12.5,
+    "deployments": 0,
+    "deploy_attempts": 0,
+    "failed_deployments": 0,
+    "deployments_per_week": 0.0,
+    "lead_time_hours": null,
+    "lead_time_samples": 0,
+    "mttr_hours": null,
+    "recovery_samples": 0,
+    "change_failure_rate": null,
     "week": "2026-W46",
     "start": "2026-11-09",
     "end": "2026-11-15",
@@ -41,20 +41,20 @@
     "partial": false
   },
   "summary": {
-    "deployments": 7,
-    "deploy_attempts": 8,
-    "failed_deployments": 1,
-    "deployments_per_week": 0.88,
-    "lead_time_hours": 0.01,
-    "lead_time_samples": 11,
-    "mttr_hours": 0.31,
-    "recovery_samples": 1,
-    "change_failure_rate": 12.5,
+    "deployments": 0,
+    "deploy_attempts": 0,
+    "failed_deployments": 0,
+    "deployments_per_week": 0.0,
+    "lead_time_hours": null,
+    "lead_time_samples": 0,
+    "mttr_hours": null,
+    "recovery_samples": 0,
+    "change_failure_rate": null,
     "grades": {
-      "deployments_per_week": "🟡 Medium",
-      "lead_time_hours": "🟢 Elite",
-      "mttr_hours": "🟢 Elite",
-      "change_failure_rate": "🟢 Elite"
+      "deployments_per_week": "🔴 Low",
+      "lead_time_hours": "—",
+      "mttr_hours": "—",
+      "change_failure_rate": "—"
     }
   },
   "open_failure_since": null,
@@ -64,83 +64,17 @@
     "mttr": "배포 실패 → 다음 성공 배포까지 걸린 시간 + incident 이슈 생성→종료 시간 (평균)",
     "change_failure_rate": "실패한 배포 실행 수 ÷ 전체 배포 시도 수 (cancelled/skipped 제외)"
   },
-  "run_number": "8",
-  "dashboard_url": "https://oocumu.github.io/teum-planner/",
-  "recent_deploys": [
-    {
-      "number": 8,
-      "conclusion": "success",
-      "sha": "71349638867c085780a9047d7f9fbed9eca95909",
-      "title": "docs: OSS 기본 구조 완성 (LICENSE, CODE_OF_CONDUCT, README, CONTRIBUTING) (#7)",
-      "event": "push",
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43712178385",
-      "finished": "2026-11-15T12:07:06+00:00"
-    },
-    {
-      "number": 7,
-      "conclusion": "success",
-      "sha": "a8b865d969a54872163818a31d3b348080db31a3",
-      "title": "docs: ADR 구조와 비동기 협업 워크플로우 (#6)",
-      "event": "push",
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43712140311",
-      "finished": "2026-11-15T12:06:37+00:00"
-    },
-    {
-      "number": 6,
-      "conclusion": "success",
-      "sha": "187ce5427e4680b9ec1162e35e6d5982ee67f9c3",
-      "title": "feat: 문장 파서와 자동 배치 알고리즘 프로토타입 (#5)",
-      "event": "push",
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43712102663",
-      "finished": "2026-11-15T12:06:12+00:00"
-    },
-    {
-      "number": 5,
-      "conclusion": "success",
-      "sha": "c83db44df0d8e88516ba64bfeb21ddae4d4bee6d",
-      "title": "docs(readme): DORA 결과 분석을 최신 지표로 갱신 (#4)",
-      "event": "push",
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43706631277",
-      "finished": "2026-11-15T10:58:51+00:00"
-    },
-    {
-      "number": 4,
-      "conclusion": "success",
-      "sha": "6d3cf6e14803f4907ef9438c1f41201a11b06edb",
-      "title": "docs: CONTRIBUTING 및 코드 리뷰 가이드 작성 (#3)",
-      "event": "push",
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43706173998",
-      "finished": "2026-11-15T10:52:50+00:00"
-    },
-    {
-      "number": 3,
-      "conclusion": "success",
-      "sha": "4b0ea537a054563b60385c57485dcc9f4f6a4ecb",
-      "title": "fix: 템플릿 파일 위치 수정 및 DORA 문서 README 통합 (#2)",
-      "event": "push",
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43691938602",
-      "finished": "2026-11-15T07:53:35+00:00"
-    },
-    {
-      "number": 2,
-      "conclusion": "success",
-      "sha": "2c2dc0280a0bee5c2c6647ba0ad9b6af1c4cb91c",
-      "title": "chore: PR 템플릿과 CODEOWNERS 추가 (#1)",
-      "event": "push",
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43690451529",
-      "finished": "2026-11-15T07:33:29+00:00"
-    },
-    {
-      "number": 1,
-      "conclusion": "failure",
-      "sha": "71baf1ae17b7a4aaa849a19d50db99d51c382508",
-      "title": "Add files via upload",
-      "event": "push",
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43689075774",
-      "finished": "2026-11-15T07:14:59+00:00"
-    }
-  ],
+  "run_number": "9",
+  "dashboard_url": "https://oocumu.github.io/teum-planner/dashboard/",
+  "recent_deploys": [],
   "artifacts": [
+    {
+      "name": "dora-metrics-8",
+      "size": 147582,
+      "created": "2026-11-15T12:07:59+00:00",
+      "expired": false,
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43712210047"
+    },
     {
       "name": "dora-metrics-6",
       "size": 147741,

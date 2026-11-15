@@ -292,14 +292,14 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 #### 7.3.1 이번 주 지표
 
-> 자동 생성: 2026-11-15 21:07 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43712210047)
+> 자동 생성: 2026-11-15 21:09 KST · 이번 주: 2026-11-09 ~ (진행 중) · 지난 주: 2026-11-02 ~ 2026-11-08 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43712323449)
 
 | 지표 | 이번 주 (진행 중) | 지난 주 | 최근 8주 | 등급 (최근 8주) |
 |---|---:|---:|---:|:---:|
-| 배포 빈도 | 7회 | 0회 | 주 0.88회 | 🟡 Medium |
-| 변경 리드 타임 | 1분 | — | 1분 | 🟢 Elite |
-| 평균 복구 시간 (MTTR) | 19분 | — | 19분 | 🟢 Elite |
-| 변경 실패율 | 12.5% | — | 12.5% | 🟢 Elite |
+| 배포 빈도 | 0회 | 0회 | 주 0.0회 | 🔴 Low |
+| 변경 리드 타임 | — | — | — | — |
+| 평균 복구 시간 (MTTR) | — | — | — | — |
+| 변경 실패율 | — | — | — | — |
 
 ![DORA 지표 추이](docs/dora/dora-chart.png)
 
@@ -307,7 +307,7 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 | 주 (월요일) | 배포 | 실패 | 리드 타임 | MTTR | 실패율 |
 |---|---:|---:|---:|---:|---:|
-| 2026-11-09 (진행 중) | 7 | 1 | 1분 | 19분 | 12.5% |
+| 2026-11-09 (진행 중) | 0 | 0 | — | — | — |
 | 2026-11-02 | 0 | 0 | — | — | — |
 | 2026-10-26 | 0 | 0 | — | — | — |
 | 2026-10-19 | 0 | 0 | — | — | — |
@@ -320,33 +320,27 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 #### 7.3.2 대시보드 화면
 
-실제 페이지: https://oocumu.github.io/teum-planner/
+실제 페이지: https://oocumu.github.io/teum-planner/dashboard/
 
 ![대시보드 화면](docs/dora/dashboard.png)
 
 #### 7.3.3 워크플로우 실행 결과
 
-`deploy.yml` 최근 실행 8건 (이 기록으로 지표를 계산합니다)
+`ci.yml` 최근 실행 0건 (이 기록으로 지표를 계산합니다)
 
 | 실행 | 결과 | 완료 시각 (KST) | 커밋 | 트리거 |
 |---|:---:|---|---|---|
-| [#8](https://github.com/oocumu/teum-planner/actions/runs/43712178385) | ✅ 성공 | 11/15 21:07 | `7134963` docs: OSS 기본 구조 완성 (LICENSE, CODE_OF_CON | push |
-| [#7](https://github.com/oocumu/teum-planner/actions/runs/43712140311) | ✅ 성공 | 11/15 21:06 | `a8b865d` docs: ADR 구조와 비동기 협업 워크플로우 (#6) | push |
-| [#6](https://github.com/oocumu/teum-planner/actions/runs/43712102663) | ✅ 성공 | 11/15 21:06 | `187ce54` feat: 문장 파서와 자동 배치 알고리즘 프로토타입 (#5) | push |
-| [#5](https://github.com/oocumu/teum-planner/actions/runs/43706631277) | ✅ 성공 | 11/15 19:58 | `c83db44` docs(readme): DORA 결과 분석을 최신 지표로 갱신 (#4) | push |
-| [#4](https://github.com/oocumu/teum-planner/actions/runs/43706173998) | ✅ 성공 | 11/15 19:52 | `6d3cf6e` docs: CONTRIBUTING 및 코드 리뷰 가이드 작성 (#3) | push |
-| [#3](https://github.com/oocumu/teum-planner/actions/runs/43691938602) | ✅ 성공 | 11/15 16:53 | `4b0ea53` fix: 템플릿 파일 위치 수정 및 DORA 문서 README 통합 (# | push |
-| [#2](https://github.com/oocumu/teum-planner/actions/runs/43690451529) | ✅ 성공 | 11/15 16:33 | `2c2dc02` chore: PR 템플릿과 CODEOWNERS 추가 (#1) | push |
-| [#1](https://github.com/oocumu/teum-planner/actions/runs/43689075774) | ❌ 실패 | 11/15 16:14 | `71baf1a` Add files via upload | push |
+| — | — | — | — | — |
 
 #### 7.3.4 JSON 아티팩트
 
 매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).
 
-- 이번 실행: **`dora-metrics-8`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43712210047)
+- 이번 실행: **`dora-metrics-9`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43712323449)
 
 | 아티팩트 | 크기 | 생성 시각 (KST) |
 |---|---:|---|
+| [`dora-metrics-8`](https://github.com/oocumu/teum-planner/actions/runs/43712210047) | 144.1 KB | 11/15 21:07 |
 | [`dora-metrics-6`](https://github.com/oocumu/teum-planner/actions/runs/43712135958) | 144.3 KB | 11/15 21:07 |
 | [`dora-metrics-5`](https://github.com/oocumu/teum-planner/actions/runs/43706659607) | 145.4 KB | 11/15 19:59 |
 | [`dora-metrics-4`](https://github.com/oocumu/teum-planner/actions/runs/43706200268) | 145.3 KB | 11/15 19:53 |
@@ -360,23 +354,23 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 ```json
 {
-  "generated_at": "2026-11-15T12:07:49.932183+00:00",
+  "generated_at": "2026-11-15T12:09:08.463954+00:00",
   "repository": "oocumu/teum-planner",
   "summary": {
-    "deployments": 7,
-    "deploy_attempts": 8,
-    "failed_deployments": 1,
-    "deployments_per_week": 0.88,
-    "lead_time_hours": 0.01,
-    "lead_time_samples": 11,
-    "mttr_hours": 0.31,
-    "recovery_samples": 1,
-    "change_failure_rate": 12.5,
+    "deployments": 0,
+    "deploy_attempts": 0,
+    "failed_deployments": 0,
+    "deployments_per_week": 0.0,
+    "lead_time_hours": null,
+    "lead_time_samples": 0,
+    "mttr_hours": null,
+    "recovery_samples": 0,
+    "change_failure_rate": null,
     "grades": {
-      "deployments_per_week": "🟡 Medium",
-      "lead_time_hours": "🟢 Elite",
-      "mttr_hours": "🟢 Elite",
-      "change_failure_rate": "🟢 Elite"
+      "deployments_per_week": "🔴 Low",
+      "lead_time_hours": "—",
+      "mttr_hours": "—",
+      "change_failure_rate": "—"
     }
   }
 }

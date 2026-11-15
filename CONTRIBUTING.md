@@ -18,6 +18,7 @@
 | `chore/` | 빌드·설정·기타 | `chore/github-templates` |
 
 브랜치 이름은 소문자와 하이픈(`-`)만 사용하고, 가능하면 이슈 번호를 붙입니다. (예: `feat/12-ai-summary`)
+소문자와 하이픈(-)만 → 소문자, 숫자, 하이픈(-)과 접두사 뒤 슬래시(/)만
 
 ```bash
 git switch main

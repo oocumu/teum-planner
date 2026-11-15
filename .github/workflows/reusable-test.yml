@@ -1,0 +1,52 @@
+name: Reusable Test
+
+on:
+  workflow_call:
+    inputs:
+      os:
+        type: string
+        default: '["ubuntu-latest"]'
+      node:
+        type: string
+        default: '["22"]'
+      artifact:
+        type: string
+        default: ''
+    secrets:
+      GEMINI_API_KEY:
+        required: false
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON(inputs.os) }}
+        node: ${{ fromJSON(inputs.node) }}
+        exclude:
+          - os: macos-latest
+            node: '20'
+        include:
+          - os: ubuntu-latest
+            node: '24'
+            coverage: true
+    name: ${{ matrix.os }} / node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-deps
+        with:
+          node-version: ${{ matrix.node }}
+      - if: ${{ !matrix.coverage }}
+        run: npm test
+      - if: ${{ matrix.coverage }}
+        run: node --test --experimental-test-coverage
+      - if: inputs.artifact != ''
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artifact }}
+          path: dist
+      - if: inputs.artifact != ''
+        run: npm run verify

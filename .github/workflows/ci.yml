@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'feat/**', 'fix/**', 'ci/**']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -15,14 +15,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      app: ${{ steps.filter.outputs.app }}
+      ci: ${{ steps.filter.outputs.ci }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            app:
+              - 'src/**'
+              - 'public/**'
+              - 'scripts/**'
+              - 'test/**'
+              - 'package.json'
+            ci:
+              - '.github/**'
+
   lint:
+    needs: changes
+    if: needs.changes.outputs.app == 'true' || needs.changes.outputs.ci == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm install --no-audit --no-fund
+      - uses: ./.github/actions/setup-deps
       - run: npm run lint
 
   build:
@@ -30,10 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm install --no-audit --no-fund
+      - uses: ./.github/actions/setup-deps
       - run: npm run build
       - uses: actions/upload-artifact@v4
         with:
@@ -43,31 +59,17 @@ jobs:
 
   test:
     needs: build
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        node: [20, 22]
-    runs-on: ${{ matrix.os }}
-    name: test (${{ matrix.os }}, node ${{ matrix.node }})
-    env:
+    uses: ./.github/workflows/reusable-test.yml
+    with:
+      os: ${{ github.event_name == 'pull_request' && '["ubuntu-latest"]' || '["ubuntu-latest","windows-latest","macos-latest"]' }}
+      node: '["20","22"]'
+      artifact: dist
+    secrets:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-      - run: npm install --no-audit --no-fund
-      - run: npm test
-      - uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist
-      - run: npm run verify
 
   deploy:
-    needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [changes, test]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.changes.outputs.app == 'true'
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -86,3 +88,19 @@ jobs:
           path: dist
       - id: pages
         uses: actions/deploy-pages@v4
+
+  summary:
+    needs: [changes, test, deploy]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          {
+            echo "| 항목 | 값 |"
+            echo "|---|---|"
+            echo "| 이벤트 | ${{ github.event_name }} |"
+            echo "| 브랜치 | ${{ github.ref_name }} |"
+            echo "| 앱 코드 변경 | ${{ needs.changes.outputs.app }} |"
+            echo "| 테스트 | ${{ needs.test.result }} |"
+            echo "| 배포 | ${{ needs.deploy.result }} |"
+          } >> "$GITHUB_STEP_SUMMARY"

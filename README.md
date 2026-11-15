@@ -390,7 +390,7 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 
 <br/>
 
----
+## 8. 협업 규칙
 
 | 항목 | 규칙 | 문서 |
 | --- | --- | --- |
@@ -401,6 +401,8 @@ main 에 push ─▶ Deploy 워크플로우 (GitHub Pages 배포)   ── 이 �
 | 이슈 | Bug / Feature 템플릿으로 등록 | [ISSUE_TEMPLATE](.github/ISSUE_TEMPLATE) |
 
 <br/>
+
+---
 
 <div align="center">
 <sub>※ 전반적인 프로젝트 볼륨과 마일스톤 초안의 구현에 관해서는 AI의 도움을 받았습니다.</sub>

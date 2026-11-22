@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-15T20:18:17.002873+00:00",
+  "generated_at": "2026-11-22T21:00:02.528547+00:00",
   "repository": "oocumu/teum-planner",
   "demo": false,
-  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/43757255045",
+  "run_url": "https://github.com/oocumu/teum-planner/actions/runs/45069504259",
   "config": {
     "repo": "oocumu/teum-planner",
     "deploy_workflow": "ci.yml",
@@ -20,24 +20,24 @@
     "mttr_hours": null,
     "recovery_samples": 0,
     "change_failure_rate": null,
-    "week": "2026-W47",
-    "start": "2026-11-16",
-    "end": "2026-11-22",
+    "week": "2026-W48",
+    "start": "2026-11-23",
+    "end": "2026-11-29",
     "partial": true
   },
   "last_week": {
-    "deployments": 4,
-    "deploy_attempts": 4,
+    "deployments": 0,
+    "deploy_attempts": 0,
     "failed_deployments": 0,
-    "deployments_per_week": 4.0,
-    "lead_time_hours": 0.03,
-    "lead_time_samples": 13,
+    "deployments_per_week": 0.0,
+    "lead_time_hours": null,
+    "lead_time_samples": 0,
     "mttr_hours": null,
     "recovery_samples": 0,
-    "change_failure_rate": 0.0,
-    "week": "2026-W46",
-    "start": "2026-11-09",
-    "end": "2026-11-15",
+    "change_failure_rate": null,
+    "week": "2026-W47",
+    "start": "2026-11-16",
+    "end": "2026-11-22",
     "partial": false
   },
   "summary": {
@@ -64,7 +64,7 @@
     "mttr": "배포 실패 → 다음 성공 배포까지 걸린 시간 + incident 이슈 생성→종료 시간 (평균)",
     "change_failure_rate": "실패한 배포 실행 수 ÷ 전체 배포 시도 수 (cancelled/skipped 제외)"
   },
-  "run_number": "22",
+  "run_number": "23",
   "dashboard_url": "https://oocumu.github.io/teum-planner/dashboard/",
   "recent_deploys": [
     {
@@ -105,6 +105,13 @@
     }
   ],
   "artifacts": [
+    {
+      "name": "dora-metrics-22",
+      "size": 145611,
+      "created": "2026-11-15T20:18:25+00:00",
+      "expired": false,
+      "url": "https://github.com/oocumu/teum-planner/actions/runs/43757255045"
+    },
     {
       "name": "dora-metrics-21",
       "size": 144267,
@@ -153,13 +160,6 @@
       "created": "2026-11-15T12:11:08+00:00",
       "expired": false,
       "url": "https://github.com/oocumu/teum-planner/actions/runs/43712409605"
-    },
-    {
-      "name": "dora-metrics-10",
-      "size": 143993,
-      "created": "2026-11-15T12:10:02+00:00",
-      "expired": false,
-      "url": "https://github.com/oocumu/teum-planner/actions/runs/43712388884"
     }
   ]
 }

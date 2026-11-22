@@ -292,14 +292,14 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 #### 7.3.1 이번 주 지표
 
-> 자동 생성: 2026-11-16 05:18 KST · 이번 주: 2026-11-16 ~ (진행 중) · 지난 주: 2026-11-09 ~ 2026-11-15 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/43757255045)
+> 자동 생성: 2026-11-23 06:00 KST · 이번 주: 2026-11-23 ~ (진행 중) · 지난 주: 2026-11-16 ~ 2026-11-22 · [수집 실행 로그](https://github.com/oocumu/teum-planner/actions/runs/45069504259)
 
 | 지표 | 이번 주 (진행 중) | 지난 주 | 최근 8주 | 등급 (최근 8주) |
 |---|---:|---:|---:|:---:|
-| 배포 빈도 | 0회 | 4회 | 주 0.57회 | 🟡 Medium |
-| 변경 리드 타임 | — | 2분 | 2분 | 🟢 Elite |
+| 배포 빈도 | 0회 | 0회 | 주 0.57회 | 🟡 Medium |
+| 변경 리드 타임 | — | — | 2분 | 🟢 Elite |
 | 평균 복구 시간 (MTTR) | — | — | — | — |
-| 변경 실패율 | — | 0.0% | 0.0% | 🟢 Elite |
+| 변경 실패율 | — | — | 0.0% | 🟢 Elite |
 
 ![DORA 지표 추이](docs/dora/dora-chart.png)
 
@@ -307,14 +307,14 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 | 주 (월요일) | 배포 | 실패 | 리드 타임 | MTTR | 실패율 |
 |---|---:|---:|---:|---:|---:|
-| 2026-11-16 (진행 중) | 0 | 0 | — | — | — |
+| 2026-11-23 (진행 중) | 0 | 0 | — | — | — |
+| 2026-11-16 | 0 | 0 | — | — | — |
 | 2026-11-09 | 4 | 0 | 2분 | — | 0.0% |
 | 2026-11-02 | 0 | 0 | — | — | — |
 | 2026-10-26 | 0 | 0 | — | — | — |
 | 2026-10-19 | 0 | 0 | — | — | — |
 | 2026-10-12 | 0 | 0 | — | — | — |
 | 2026-10-05 | 0 | 0 | — | — | — |
-| 2026-09-28 | 0 | 0 | — | — | — |
 
 </details>
 
@@ -339,10 +339,11 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 매 실행마다 `latest.json`, `history.json`, 그래프 PNG를 아티팩트로 저장합니다 (보관 90일).
 
-- 이번 실행: **`dora-metrics-22`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/43757255045)
+- 이번 실행: **`dora-metrics-23`** → [실행 페이지에서 다운로드](https://github.com/oocumu/teum-planner/actions/runs/45069504259)
 
 | 아티팩트 | 크기 | 생성 시각 (KST) |
 |---|---:|---|
+| [`dora-metrics-22`](https://github.com/oocumu/teum-planner/actions/runs/43757255045) | 142.2 KB | 11/16 05:18 |
 | [`dora-metrics-21`](https://github.com/oocumu/teum-planner/actions/runs/43712976675) | 140.9 KB | 11/15 21:17 |
 | [`dora-metrics-19`](https://github.com/oocumu/teum-planner/actions/runs/43712922686) | 140.9 KB | 11/15 21:16 |
 | [`dora-metrics-17`](https://github.com/oocumu/teum-planner/actions/runs/43712863528) | 140.5 KB | 11/15 21:15 |
@@ -350,7 +351,6 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 | [`dora-metrics-14`](https://github.com/oocumu/teum-planner/actions/runs/43712663685) | 140.3 KB | 11/15 21:13 |
 | [`dora-metrics-13`](https://github.com/oocumu/teum-planner/actions/runs/43712563886) | 145.6 KB | 11/15 21:12 |
 | [`dora-metrics-12`](https://github.com/oocumu/teum-planner/actions/runs/43712409605) | 141.0 KB | 11/15 21:11 |
-| [`dora-metrics-10`](https://github.com/oocumu/teum-planner/actions/runs/43712388884) | 140.6 KB | 11/15 21:10 |
 
 같은 내용은 저장소에도 커밋됩니다: [`metrics/latest.json`](metrics/latest.json) · [`metrics/history.json`](metrics/history.json)
 
@@ -358,7 +358,7 @@ main 에 push ─▶ CI 워크플로우 (GitHub Pages 배포)       ── 이 �
 
 ```json
 {
-  "generated_at": "2026-11-15T20:18:17.002873+00:00",
+  "generated_at": "2026-11-22T21:00:02.528547+00:00",
   "repository": "oocumu/teum-planner",
   "summary": {
     "deployments": 4,
